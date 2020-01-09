@@ -1,0 +1,168 @@
+<% include ../partials/homepage-header %>
+
+
+
+<div class="tz">
+<% include ../partials/user-left %>
+<style>
+    .edtpr{
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 10px 6px 10px grey;
+    }
+    .edtpr:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px grey;
+    }
+</style>
+
+<div class="tz-2">
+    <div class="tz-2-com tz-2-main">
+        <h4>Manage My Profile  <span style="float:right; margin-top:-22px;"><% include ../partials/common %></span></h4>
+        
+        <div class="db-list-com tz-db-table">
+            <div class="ds-boar-title">
+            
+                <h2>Profile</h2>
+                
+            </div>
+            <table class="responsive-table bordered">
+                <tbody>
+                    <tr>
+                        <td>User Name</td>
+                        <td>:</td>
+                        <td> <%= username %></td>
+                    </tr>
+                   
+                    <tr>
+                        <td>Eamil</td>
+                        <td>:</td>
+                        <td style="text-transform:lowercase;"><%= email %></td>
+                    </tr>
+                    <tr>
+                        <td>mobile</td>
+                        <td>:</td>
+                        <td><%= mobile %></td>
+                    </tr>
+                    <tr>
+                        <td>pincode</td>
+                        <td>:</td>
+                        <td><%= pincode %></td>
+                    </tr>
+
+                    <tr>
+                        <td>country</td>
+                        <td>:</td>
+                        <td><%= country %></td>
+                    </tr>
+
+                    <tr>
+                        <td>state</td>
+                        <td>:</td>
+                        <td><%= state %></td>
+                    </tr>
+
+                    <tr>
+                        <td>city</td>
+                        <td>:</td>
+                        <td><%= city %></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Address</td>
+                        <td>:</td>
+                        <td><%= address %></td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td><span class="db-done">Active</span> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="db-mak-pay-bot">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p> 
+                <a href="/users/edit/<%= id %>" class="waves-effect waves-light btn-large edtpr">Edit my profile</a> </div>
+        </div>
+    </div>
+
+    <% if(vendor!=undefined){ %>
+    <div class="tz-2-com tz-2-main">
+            <h4>Vendor Profile</h4>
+            <div class="db-list-com tz-db-table">
+                <div class="ds-boar-title">
+                
+                    <h2>Vendor Profile</h2>
+                    
+                </div>
+                <table class="responsive-table bordered">
+                    <tbody>
+                        <tr>
+                            <td>Vendor Name</td>
+                            <td>:</td>
+                            <td> <%= vendor[0].vendor_name %></td>
+                        </tr>
+
+                        <tr>
+                                <td>Country</td>
+                                <td>:</td>
+                                <td> <%= vendor[0].vendor_country %></td>
+                         </tr>
+
+                         <tr>
+                                <td>State</td>
+                                <td>:</td>
+                                <td> <%= vendor[0].vendor_state %></td>
+                         </tr>
+
+                         <tr>
+                                <td>Pincode</td>
+                                <td>:</td>
+                                <td> <%= vendor[0].vendor_pincode %></td>
+                         </tr>
+
+                         <tr>
+                                <td>Commission</td>
+                                <td>:</td>
+                                <td> <%= vendor[0].commission %></td>
+                         </tr>
+
+                         <tr>
+                                <td>Adhar number</td>
+                                <td>:</td>
+                                <td> <%= vendor[0].vendor_adharno %></td>
+                         </tr>
+
+                         <tr>
+                            <td>Vendor type</td>
+                            <td>:</td>
+                            <td> <%= vendor[0].vendor_type %></td>
+                     </tr>
+
+                     <tr>
+                        <td>id</td>
+                        <td>:</td>
+                        <td> <%= vendor[0].id %></td>
+                 </tr>
+
+                         
+                       
+                    </tbody>
+                </table>
+                <!-- <div class="db-mak-pay-bot">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p> 
+                    <a href="/users/edit/<%= id %>" class="waves-effect waves-light btn-large edtpr">Edit my profile</a> 
+                </div> -->
+            </div>
+        </div>
+        <% } %>
+</div>
+
+<% include ../partials/notification %>
+</div>
+<% include ../partials/home-footer %>

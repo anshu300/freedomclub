@@ -1,0 +1,70 @@
+<% include ../partials/homepage-header %>
+
+<div class="tz">
+<% include ../partials/user-left %>
+<style>
+    .edtpr{
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 10px 6px 10px grey;
+    }
+    .edtpr:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px grey;
+    }
+</style>
+
+<div class="tz-2">
+    <div class="tz-2-com tz-2-main">
+        <h4>Manage My Profile <span style="float:right; margin-top:-22px;"><% include ../partials/common %> </h4>
+        <div class="db-list-com tz-db-table">
+            <div class="ds-boar-title">
+            
+                <h2>Profile</h2>
+                
+            </div>
+            <table class="responsive-table bordered">
+                <tbody>
+                    <tr>
+                        <td>User Name</td>
+                        <td>:</td>
+                        <td> <%= results[0].vendor_name %></td>
+                    </tr>
+                     
+                    <tr>
+                        <td>Country</td>
+                        <td>:</td>
+                        <td> <%= results[0].vendor_country %></td>
+                    </tr>
+
+                    <tr>
+                        <td>State</td>
+                        <td> <%= results[0].vendor_state %></td>
+                        <td>:</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pincode</td>
+                        <td>:</td>
+                        <td> <%= results[0].vendor_pincode %></td>
+                    </tr>
+
+                    
+                   
+                </tbody>
+            </table>
+            <div class="day-bot">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p> 
+                <a href="/users/edit/<%= results[0].id %>" class="waves-effect waves-light btn-large edtpr">Edit my profile</a> </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/notification %>
+</div>
+<% include ../partials/home-footer %>

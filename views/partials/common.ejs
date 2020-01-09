@@ -1,0 +1,48 @@
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--     <div class="col-md-6">-->
+<!--        <button class="btn btn-lg" id="User-dash">User</button> -->
+<!--     </div>-->
+<!--     <//% //if(vid==8 || vid==7 || vid==6 || vid==5){ %>-->
+<!--      <div class="col-md-6">-->
+<!--        <button class="btn btn-lg" id="Merchan-dash">Merchant</button> -->
+<!--      </div>-->
+<!--      <//% } %> -->
+<!--    </div>-->
+<!--</div>-->
+
+
+<style>
+    ul.mmjjh1231{
+list-style-type:none;
+}
+ul.mmjjh1231 li{
+    list-style-type:none;
+    float:left;
+}
+</style>
+
+<span>
+    <ul class="mmjjh1231">
+        <li> <button class="add btn btn-primary pr-sub" id="User-dash">User</button> </li>
+
+     <% if(vid==8){ %>
+            <li> <button class="add btn btn-primary pr-sub" id="Merchan-dash" style="margin-left:10px;">Merchant</button> </li>
+        <% } %> 
+
+        <% if(vid==7){ %>
+            <li> <button class="add btn btn-primary pr-sub" id="Merchan-dash" style="margin-left:10px;">Freedom Micro Partner</button> </li>
+        <% } %> 
+
+
+        <% if(vid==6){ %>
+        <li> <button class="add btn btn-primary pr-sub" id="Merchan-dash" style="margin-left:10px;">Freedom Partner</button> </li>
+         <% } %> 
+
+         <% if(vid==5){ %>
+            <li> <button class="add btn btn-primary pr-sub" id="Merchan-dash" style="margin-left:10px;">Freedom State partner</button> </li>
+        <% } %>
+        
+    </ul>
+</span>
+

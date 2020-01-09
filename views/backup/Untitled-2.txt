@@ -1,0 +1,5 @@
+  var token = jwt.sign(payload, secretKey, { 
+    algorithm: 'HS256',
+    expiresIn: '10m' // if ommited, the token will not expire
+});
+res.send(token);

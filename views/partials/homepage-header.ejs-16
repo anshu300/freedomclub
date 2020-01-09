@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>freedom  club</title>
+        
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Poppins%7CQuicksand:500,700" rel="stylesheet">
+	<!-- FONTAWESOME ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="/stylesheets/font-awesome.min.css">-->
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/foundation.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main-style.css">
+        
+        <!-- <link rel="stylesheet" type="text/css" href="stylesheets/main-s.css"> -->
+      
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style-newpage.css">
+        <!--<link rel="stylesheet" type="text/css" href="/stylesheets/responsivess.css">-->
+        
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/javascripts/moment.js"></script>
+        
+        <!-- <script type="text/javascript" src="js/foundation.min.js"></script> -->
+
+        
+    </head>
+    <body>
+        <!--           top header                  -->
+        <section class="top-header-section">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-5 text-left">
+            <div class="lang">
+              <div class="btn-group" style="margin-left: 0px;">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-share-alt" id="share"></i>
+                </span>
+
+
+
+                <ul class="dropdown-menu share-btn1" role="menu">
+
+                  <li>
+                    <a data-original-title="Twitter" rel="tooltip" href="#" class="btn btn-twitter" data-placement="left">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-original-title="Facebook" rel="tooltip" href="#" class="btn btn-facebook" data-placement="left">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-original-title="Google+" rel="tooltip" href="#" class="btn btn-google" data-placement="left">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-original-title="LinkedIn" rel="tooltip" href="#" class="btn btn-linkedin" data-placement="left">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-original-title="Pinterest" rel="tooltip" class="btn btn-pinterest" data-placement="left">
+                      <i class="fa fa-pinterest"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-original-title="Email" rel="tooltip" class="btn btn-mail" data-placement="left">
+                      <i class="fa fa-envelope"></i>
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+              <div class="btn-group" style="margin-left: 7px;">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                  Eng
+                  <span class="glyphicon glyphicon-chevron-down" style="font-size: 15px; top:4px; margin-left: 2px;"></span>
+                </span>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="#">Action</a>
+                  </li>
+                  <li>
+                    <a href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a href="#">Something else here</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">Separated link</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-hidden col-sm-hidden col-xs-2 text-center" >
+              <img src="/images/bird122121201.png" class="img-reponsive" id="bird1011">
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-5 text-right">
+            <div class="lang">
+              <ul>
+                <li>
+                  <span class="cst1212">Customer Support</span>
+                  <span class="cst1212"> | &nbsp;</span>
+                </li>
+                <li>
+                  <span class="cst1212">Download App</span>
+                  <i class="fa fa-android"></i>
+                  <i class="fa fa-apple"></i>
+                </li>
+                <li id="scrl-mn"><span style="font-size:25px;cursor:pointer; color:#630;" onclick="openNav()">&#9776;</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!--          end  top header                  -->
+        <!--    logo and category section          -->
+        <section class="logo-section">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="logo">
+                                <a href="http://103.90.241.225:5000/">
+                                <img src="/images/logo.png"  >
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-hidden">
+                            <div class="logo-add">
+                                <img src="/images/logo-add.jpg"  >
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 text-right">
+                            <div class="site-ls-btn">
+                                <!--<div class="btn-group-vertical" style="margin-bottom: 10px;">-->
+                                   <!-- <button type="button" class="btn btn-primary"> <i class="fa fa-user" aria-hidden="true"></i> &nbsp;Login&nbsp; &nbsp;</button> -->
+                                <!--    <a href='#' class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; MY Account</a>-->
+                                <!--</div>-->
+                                <!--<br>-->
+                                
+                                
+                                <div class="btn-group-vertical" style="margin-bottom: 0px;">
+<!-- <button type="button" class="btn btn-primary"> <i class="fa fa-user" aria-hidden="true"></i> &nbsp;Login&nbsp; &nbsp;</button> -->
+<% if(login=="My Account"){ %>
+<a href='/users' class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; MY Account</a> <br> 
+<a href='/logout' class="btn btn-primary"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Log Out</a> <br> 
+<% } %>
+<% if(login=="Login") { %>
+<a href='/login' class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Login</a> <br> 
+<a href='http://www.freedomclub.in/new-register/' class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Signup</a>
+<% } %> 
+</div>
+                                
+                               
+
+                                <div class="btn-group-vertical">
+                                   <!-- <button type="button" class="btn btn-primary"> <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;SignUp</button> -->
+
+                                 <!-- <a href='/login' class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> &nbsp;Logout</a> -->
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Megha menu -->
+                        <div class="col-md-12 text-left">
+                            <div class="collapse navbar-collapse js-navbar-collapse navi-menu">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown mega-dropdown ">
+                                        <a href="#" class="dropdown-toggle icon" data-toggle="dropdown"> <span class="glyphicon glyphicon-align-justify" style="font-size: 20px;"></span></a>           
+                                        <ul class="dropdown-menu mega-dropdown-menu">
+                                            <li class="col-sm-3">
+                                                <ul>
+                                                    <li class="dropdown-header">Men Collection</li>
+                                                    <div id="menCollection" class="carousel slide" data-ride="carousel">
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                                <a href="#"><img src="http://placehold.it/254x150/ff3546/f5f5f5/&amp;text=New+Collection"   alt="product 1"></a>
+                                                                <h4><small>Summer dress floral prints</small></h4>
+                                                                <button class="btn btn-primary pricebtn" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       
+                                                            </div>
+                                                            <!-- End Item -->
+                                                            <div class="item">
+                                                                <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&amp;text=New+Collection"   alt="product 2"></a>
+                                                                <h4><small>Gold sandals with shiny touch</small></h4>
+                                                                <button class="btn btn-primary" type="button">9,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>        
+                                                            </div>
+                                                            <!-- End Item -->
+                                                            <div class="item">
+                                                                <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&amp;text=New+Collection"   alt="product 3"></a>
+                                                                <h4><small>Denin jacket stamped</small></h4>
+                                                                <button class="btn btn-primary" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>      
+                                                            </div>
+                                                            <!-- End Item -->                                
+                                                        </div>
+                                                        <!-- End Carousel Inner -->
+                                                        <!-- Controls -->
+                                                        <a class="left carousel-control" href="#menCollection" role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#menCollection" role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- /.carousel -->
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-sm-2">
+                                                <ul>
+                                                    <li class="dropdown-header">Recharge</li>
+                                                    <li><a href="/products/view_more">Mobile</a></li>
+                                                    <li><a href="/products/view_more">DTHl</a></li>
+                                                    <li><a href="/products/view_more">Left &amp;Metro Card</a></li>
+                                                    <li><a href="/products/view_more">Data Card</a></li>
+                                                    <li><a href="/products/view_more">More..</a></li>
+                                                    <li class="divider"></li>
+                                                    <li class="dropdown-header">Payment</li>
+                                                    <li><a href="/products/view_more">Electriity Bill</a></li>
+                                                    <li><a href="/products/view_more">Cable Tv Bill</a></li>
+                                                    <li><a href="/products/view_more">Gas  </a></li>
+                                                    <li><a href="/products/view_more">More... </a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-sm-2">
+                                                <ul>
+                                                    <li class="dropdown-header"> Booking </li>
+                                                    <li><a href="/products/view_more">Flight</a></li>
+                                                    <li><a href="/products/view_more">Train </a></li>
+                                                    <li><a href="/products/view_more">Bus </a></li>
+                                                    <li><a href="/products/view_more">Movie </a></li>
+                                                    <li><a href="/products/view_more">Event </a></li>
+                                                    <li><a href="/products/view_more">More... </a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-sm-2">
+                                                <ul>
+                                                    <li class="dropdown-header">Shop Now</li>
+                                                    <li><a href="/products/new_business/mobile">Mobile</a></li>
+                                                    <li><a href="/products/new_business">Electronic</a></li>
+                                                    <li><a href="/products/new_business">Accessories</a></li>
+                                                    <li><a href="/products/new_business">Fashion</a></li>
+                                                    <li><a href="/products/new_business">Furniture</a></li>
+                                                    <li><a href="/products/new_business">More..</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <ul>
+                                                    <li class="dropdown-header">All Marchent </li>
+                                                    <li><a href="#">Coming Soon..</a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="select-option">
+                                    <li>
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4 col-xs-4  in">
+                                                    <input type="text" class="form-control" placeholder="Keywords">
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4  in">
+                                                    <select id="category" class="form-control">
+                                                        <option selected>Select Location</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4  in">
+                                                    <select id="category1" class="form-control">
+                                                        <option selected>Select Category</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <button class="btn btn-default search-btn" type="submit"><i class="fa fa-search"></i></button>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!--- Mobile Header Section --->
+        
+        <section class="mobile-logo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 nvbaricn111" style="margin-top: 11%;">
+                    <span style="font-size:25px;cursor:pointer; color:#630;" onclick="openNav()" class="opennav11">&#9776;</span>
+                    <div id="mySidenav10012" class="sidenav1212">
+  <a href="javascript:void(0)" class="closebtn11" onclick="closeNav()">&times;</a>
+                                      <a href="/our-upcoming-portal/" target="_blank">Home</a>
+                                      <a href="/about-new/" target="_blank">About Us</a>
+                                      <a href="/advertise-new/" target="_blank">Advertise</a>
+                                      <a href="/db-claim-new/" target="_blank">Claim</a>
+                                      <a href="/db-invoice-new/" target="_blank">Invoice</a>
+                                      <a href="/dashboard-new/" target="_blank">Dashboard</a>
+                                      <a href="/db-post-ads-new/" target="_blank">Post And Add</a>
+                                      
+                                       
+                                       
+                                      <a href="/db-payment-new/" target="_blank">Make Payment</a>
+                                       
+                                      <a href="/db-listing-more-info-new/" target="_blank">Listing & More Information</a>
+                                       
+                                    <a href="/shop-listing-details-new/" target="_blank">Shop Listing Details</a>
+                                     
+                                       
+                                    <a href="/list-lead-new/" target="_blank">Lead & List</a>
+                                      <a href="/how-it-work-new/" target="_blank">How It Work</a>
+                                      
+                                      <a href="/db-review-new/" target="_blank">Review</a>
+                                      
+                        
+                                      <a href="/db-my-profile-new/" target="_blank">My Profile</a>
+                                        <a href="/register-new/" target="_blank">Register</a>
+                                      <a href="/login-new/" target="_blank">Log In</a>
+                                    <a href="/forgot-pass-new/" target="_blank">Forget Password</a>
+                                    <a href="/list_grid_new/" target="_blank">List Grid New</a>
+                                    <a href="/customer_reviews_new/" target="_blank">Customer Reviews New</a>
+                                    <a href="/new_business_new/" target="_blank">Business New</a>
+                                    <a href="/trendings-new/" target="_blank">Trendings New</a>
+                                    <a href="/morenew-booking/" target="_blank">Booking New</a>
+</div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="logo">
+                         <a href="/our-upcoming-portal/">
+                        <img src="/images/logo.png"  >
+                        </a>
+                     </div>
+                </div>
+                <div class="col-xs-3">
+                
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    
+    <script>
+function openNav() {
+    document.getElementById("mySidenav10012").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav10012").style.width = "0";
+}
+</script>
+
+	<script>
+	   $(document).ready(function(){
+    $("#mng-db").click(function(){
+        $(".tz-l-2").slideToggle();
+    });
+});
+	</script>
+	
+	<script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("bird1011").style.display = "block";
+        document.getElementById("scrl-mn").style.display = "block";
+        document.getElementById("scrl-mn").style.marginLeft = "7px";
+    } else {
+        document.getElementById("bird1011").style.display = "none";
+        document.getElementById("scrl-mn").style.display = "none";
+    }
+}
+
+    </script>
+        
+        <!--- End Mobile Header Section ----->
+
+           
+
+
+            <!-- Signup and SignIn Modal  -->
+
+
+
+            <!-- End Signup and SignIn Modal  -->
+

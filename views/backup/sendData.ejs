@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <form method="POST" id="avanthgarde_payment_form" action='https://test.avantgardepayments.com/agcore/payment'>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">MERCHANT iD</label>
+                <input type="hidden" class="form-control" name="me_id" value="me_id">          
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Txn  Detail</label>
+                <input type="hidden" class="form-control" name="txn_details" value="txn_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">Txn  Detail</label>
+                    <input type="hidden" class="form-control" name="pg_details" value="pg_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">card_details</label>
+                    <input type="hidden" class="form-control" name="card_details" value="card_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">cust_details</label>
+                    <input type="hidden" class="form-control" name="cust_details" value="cust_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">bill_details</label>
+                    <input type="hidden" class="form-control" name="bill_details" value="bill_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">ship_details</label>
+                    <input type="hidden" class="form-control" name="ship_details" value="ship_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">item_details</label>
+                    <input type="hidden" class="form-control" name="item_details" value="item_details">
+            </div>
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1">other_details</label>
+                    <input type="hidden" class="form-control" name="other_details" value="other_details">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function (e) {
+          $("#avanthgarde_payment_form").submit();
+      });
+</script>

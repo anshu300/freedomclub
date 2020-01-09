@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FreedomClub</title>
+  <link rel="shortcut icon" href="http://www.freedomclub.in/static/images/favicon.ico" />
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">-->
+  <!-- <link rel="stylesheet" type="text/css" href="css/foundation.min.css"> -->
+  <!--<link rel="stylesheet" type="text/css" href="/stylesheets/main-style.css">-->
+  <!-- <link rel="stylesheet" type="text/css" href="stylesheets/main-s.css"> -->
+  <!--<script type="text/javascript" src="javascripts/jquery-3.3.1.min.js"></script>-->
+  <!--<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>-->
+  <!-- <script type="text/javascript" src="js/foundation.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/indexpage-css.css">
+
+
+
+
+  
+
+</head>
+
+<body>
+  <!--           top header                  -->
+
+
+  <% include ./partials/homepage-header %>
+
+    <section class="recharge-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+            <div class="recharge-box">
+
+              
+                <h2>Recharge & PayBills</h2>
+                <div class="cnt-panel">
+                 <ul class="nav nav-tabs rechrge-item">
+                <li class="tr text-center active" data-id="Mobile">
+                  <a data-toggle="tab" href="#home">
+                    <img src="images/Mobile_Icon.png">
+                    <label class="rechrge-cap">Mobile</label>
+                  </a>
+                </li>
+                <li class="tr text-center dth-recharge">
+                  <a data-toggle="tab" href="#menu1">
+                    <img src="images/dth.png">
+                    <label class="rechrge-cap">DTH</label>
+                  </a>
+                </li>
+                <li class="tr text-center">
+                  <a data-toggle="tab" href="#menu2">
+                    <img src="images/electricity.png">
+                    <label class="rechrge-cap">Electricity</label>
+                  </a>
+                </li>
+
+                </a>
+                </li>
+                <li class="text-center tr">
+                  <a data-toggle="tab" href="#menu3">
+                    <img src="images/metro.png">
+                    <label class="rechrge-cap">Metro</label>
+                  </a>
+                </li>
+                <li class="text-center tr">
+                  <a data-toggle="tab" href="#">
+                    <img src="/images/more-icon/landline1212.png">
+                    <label class="rechrge-cap">LandLinne</label>
+                  </a>
+                </li>
+                <li class="tr text-center">
+                  <a href="/recharge">
+                   <img src="images/grid1515.png">
+                    <label class="rechrge-cap">More</label>
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                  <h3>Recharge Your Mobile. </h3>
+                  <p>
+                    <!-- <form> -->
+                    <input type="hidden" value="<%= user %>" id="uid">
+
+                    <label class="radio-inline mob-op">
+                      <input type="radio" name="optradio" value="Prepaid" checked="">Prepaid
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-inline mob-op">
+                      <input type="radio" name="optradio" value="Postpaid" class="chk">Postpaid
+                      <span class="checkmark"></span>
+                    </label>
+
+                    <div class="floated-label-wrapper form-group">
+                      <label for="full-name">Mobile No.</label>
+                      <input type="text" id="mobile_num" name="full name input" placeholder="+91 " class="form-control recharge-form">
+                    </div>
+                    <div class="floated-label-wrapper form-group">
+                      <div class="floated-label-wrapper form-group">
+                        <label for="email">Select Metro</label>
+                        <select id="rechare-card" name="metro" class="rech form-control recharge-form">
+                          <!-- <option value="1">Airtel</option>
+                        <option value="10">Vodafone</option>
+                        <option value="3">Idea</option>                         -->
+                        </select>
+                      </div>
+                      <span>
+                        <a href="javascript:void(0)" class="browsePlan">Browse Plan</a>
+                      </span>
+                    </div>
+                    <div class="floated-label-wrapper form-group">
+                      <label for="pass">Enter Amount</label>
+                      <input type="text" id="amount" name="amount" placeholder="Enter Amount" class="form-control recharge-form">
+                    </div>
+                    <button class="btn btn-primary rechrgebutton" id="Rechage" type="button">Recharge Now</button>
+
+
+                    <!-- </form> -->
+                  </p>
+                  
+                  
+                  
+                  
+                  
+       
+                  
+                  
+                  
+
+                  <!--===============================================Mobile Plane Modal========= ========================================================-->
+
+
+
+                  <div class="modal fade fade-scale" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body" style="padding: 0px;">
+                          <div class="tbpn">
+
+
+                            <div class="tab">
+                              <button class="tablinks" onclick="openCity(event, 'Normal')" id="defaultOpen">Normal Plan</button>
+                              <button class="tablinks" onclick="openCity(event, 'FTT')">Full TalkTime Plan</button>
+                              <button class="tablinks" onclick="openCity(event, '2g')">2g Data</button>
+                              <button class="tablinks" onclick="openCity(event, '3g')">3g Data</button>
+                              <button class="tablinks" onclick="openCity(event, '4g')">4g Data</button>
+                            </div>
+
+                            <div id="Normal" class="tabcontent">
+                              <h3>Normal Plan</h3>
+                              <!-- <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th>Talktime</th>
+                                  <th>Validity</th>
+                                  <th>Description</th>
+                                  <th>Price</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>150</td>
+                                  <td>Unlimited</td>
+                                  <td>Full TalkTime</td>
+                                  <td>
+                                    <button type="button" class="btn btn-outline-secondary">RS. 150</button>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>300</td>
+                                  <td>Unlimited</td>
+                                  <td>Full TalkTime</td>
+                                  <td>
+                                    <button type="button" class="btn btn-outline-secondary">RS. 300</button>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>500</td>
+                                  <td>Unlimited</td>
+                                  <td>Full TalkTime</td>
+                                  <td>
+                                    <button type="button" class="btn btn-outline-secondary">RS. 500</button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table> -->
+                            </div>
+
+                            <div id="FTT" class="tabcontent">
+                              <h3>Paris</h3>
+                              <p>No plan exit</p>
+                            </div>
+
+                            <div id="2g" class="tabcontent">
+                              <h3>2G</h3>
+                              <p>No plan exit</p>
+                            </div>
+                            <div id="3g" class="tabcontent">
+                              <h3>3g</h3>
+                              <p>No plan exit</p>
+                            </div>
+                            <div id="4g" class="tabcontent" style="overflow:scroll;">
+                              <h3>4g</h3>
+                              <p class="4g-plan"></p>
+                              <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>Talktime</th>
+                                    <th>Detail</th>
+                                    <th>Validity</th>
+                                    <th>Price</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="4G">
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <!--===============================================Login Modal Loginmodal========= ========================================================-->
+
+                 <div class="modal fade-scale" id="Loginmodal" role="dialog">
+    <div class="modal-dialog modal-lg" style="top: 10%;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+        <div class="modal-body" style="padding:0px; height: 450px;">
+           <button type="button" class="close clsbtn1112" data-dismiss="modal">&times;</button>
+          <div class="container" style="width: 100%;">
+   <div class="row" style="margin-left:-10px;margin-right:-10px; border-radius:4px;">
+       <div class="col-md-5" style="background:#e8dfb1; height: 450px;">
+           <div class="panel" style="margin:0px; border:none;  margin-top:10px;">
+               <div class="panel-body benifits11021">
+                   <h2>Benefits of Freedom Club Account</h2>
+                   
+                   <ul class="beni12011">
+                       <li>
+                        <span style="margin-right:8px;"> <img src="/images/icon/Wallet.png" alt="" /> </span> <span style="margin-right:8px;"> Fast & Secure Payments  </span>
+                       </li>
+                       
+                       <li>
+                        <span style="margin-right:8px;"><img src="images/Mobile_Icon.png" style="width:20px; height:20px;"> </span> <span style="margin-right:8px;"> Pay Utility Bills or Mobile Recharge & Get Cashbacks </span>
+                       </li>
+                       
+                       <li>
+                        <span style="margin-right:8px;"><img src="/images/icon/upload.png" alt="" /> </span> <span style="margin-right:8px;"> Pay at over all Freedom Club merchant network</span>
+                       </li>
+                       
+                       <li>
+                    
+                    <span style="margin-right:8px;"><img src="/images/more-icon/movie.png" alt="" style="width:20px; height:20px;" > </span>    <span  style="margin-right:8px;">Amazing deals on Travel, Movies & Shopping</span>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+    <div class="col-md-7">
+      <div class="panel panel-login cnt110110">
+          <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6 tabsss">
+              <a href="#"  id="login-form-link"><div class="login active111001">LOGIN</div></a>
+            </div>
+            <div class="col-xs-6 tabsss">
+              <a href="#" id="register-form-link"><div class="register">REGISTER</div></a>
+            </div>
+             <div class="col-xs-6 tabsss" style="width:40% !important;">
+              <a href="/forgot" id="forgot-form-link"><div class="forgot" style="font-weight:bold;">FORGOT PASSWORD</div></a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                <h2>LOGIN</h2>
+                  <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                  </div>
+                  <div class="form-group ">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="col-xs-6 pull-left form-group checkbox">
+                    <input id="checkbox1" type="checkbox" name="remember" class="form-control">
+                    <label for="checkbox1">Remember Me</label>   
+                  </div>
+                  
+                  <div class="col-xs-6 form-group pull-right">     
+                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                  </div>
+                  <!--<div class="input-field s12"> <a href="/forgot">Forgot password</a> | <a href="register.html">Create a new account</a> </div>-->
+                  
+                  
+                  <div class="form-group pull-right text-center">     
+                         <div class="logo">
+                                <a href="http://103.90.241.225:5000/">
+                                <img src="/images/logo.png" style="width:30% !important;" >
+                                </a>
+                            </div>
+                  </div>
+              </form>
+              
+              
+              
+              <form id="register-form" action="#" method="post" role="form" style="display: none;">
+                <h2>REGISTER</h2>
+                  <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-primary btn-register" value="Register Now">
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+                  <!-- /.modal -->
+
+
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                  <h3>Recharge DTH</h3>
+                  <p>
+                    <form>
+
+                      <div class="floated-label-wrapper form-group">
+                        <label for="email">Select Operator</label>
+                        <select id="metro" name="metro" class="form-control recharge-form">
+                          <option value="27">Tata Sky</option>
+                          <option value="31">Airtel</option>
+                          <option value="24">Videocon</option>
+                        </select>
+                        <span>
+                          <!-- <a href="#">Browse Plan</a> -->
+                        </span>
+                      </div>
+
+                      <div class="floated-label-wrapper form-group">
+                        <label for="full-name">Enter Card No.</label>
+                        <input type="text" id="card-no" name="card_no" placeholder="Enter Card No. " class="form-control recharge-form">
+                      </div>
+
+                      <div class="floated-label-wrapper form-group">
+                        <label for="pass">Enter Amount</label>
+                        <input type="text" id="pass" name="password input" placeholder="Enter Amount" class="form-control recharge-form">
+                      </div>
+                      <input class="btn btn-primary rechrgebutton" id="" type="submit" value="Recharge Now">
+
+
+                    </form>
+                  </p>
+                </div>
+
+
+                <script type="text/javascript">
+                  var rtype = "Prepaid";
+                  var oprator;
+                  var recharge = "mobile";
+                  $('.text-center').on("click", function () {
+                    recharge = $(this).data().id;
+                  });
+                  $('.chk').on("click", function () {
+                    rtype = $(this).val();
+                  });
+                  $('select').on("change", function () {
+                    oprator = $(this).val();
+                  });
+                  $('#Rechage').on("click", function () {
+                         var amount = $('#amount').val();
+                      var mobile = $('#mobile_num').val();
+                      if(amount==""){
+                         alert("Please Enter Amount");
+                          return false;
+                      }
+                      if (mobile == "") {
+                        alert("Please Enter A Mobile Number");
+                        return false;
+                      }
+                      if (/^\d{10}$/.test(mobile)) {
+                      } else {
+                        alert("Invalid number");
+                        return false;
+                      }
+                    var uid = $('#uid').val();
+                    if (uid == 0) {
+                      $('#Loginmodal').modal('show');
+                      $('#SaveChange').on("click", function () {
+                        var mob = $('#mobile_number').val();
+                        var pass = $('#modal_Password').val();
+                        $.post("/ajaxlogin", { "mobile": mob, "password": pass }, function (d) {
+                          if (d.status == 200) {
+                            $('#uid').val(1);
+                            $('#Loginmodal').modal('hide');
+                          }
+                          if (d.status == 500) {
+                            $('.error-mess').html("Your User Name And Password Is not Correct");
+                          }
+                        });
+                      });
+                    } else {
+                      $.post("/users/recharge", { "mobile": mobile, "amount": amount, "oprator": oprator, "r_type": rtype, "rechage_type": recharge }, function (d) {
+                        window.location.href = "users/recharge";
+                      });
+                      // var url = "http://api.rechapi.com/recharge.php?format=json&token=R5eWtAEIYqJWQFlHFwQeNco5cZpUWC&mobile=9616499322&amount=10&opid=3&urid=66C02462A2211022C&opvalue1=#opvalue1&opvalue2=#opvalue2";
+                      // $.get(url, function (d) {
+                      //   console.log(d);
+                      // });
+                    }
+                  });
+                  $('.browsePlan').on("click", function () {
+                    $('.tlb').html(" ");
+                    $('#myModal').modal('show');
+                    $.get("https://api.rechapi.com/rech_plan.php?format=json&token=R5eWtAEIYqJWQFlHFwQeNco5cZpUWC&type=3G&cirid=1&opid=" + oprator, function (d) {
+                      data = JSON.parse(d);
+                      console.log(d);
+                      var d = data.data;
+                      for (i in d) {
+                        var arr = d[i];
+                      }
+                      for (i in arr) {
+                        console.log(arr[i]);
+                        $('<tr><td>' + arr[i].talktime + '</td><td>' + arr[i].detail + '</td><td>' + arr[i].validity + '</td><td><button type="button" class="btn btn-outline-secondary" id="Recharge_amount" data-id="' + arr[i].amount + '">RS. ' + arr[i].amount + '</button></td></tr>').appendTo('.4G');
+                      }
+                    });
+                  });
+                  var num = [];
+                  $("#mobile_num").keyup(function () {
+                    var val = $(this).val();
+                    if (isNaN(val)) {
+                      console.log("str");
+                    } else {
+                      num.push(val);
+                    }
+                    if (num.length == 4) {
+                      var mob = $('#mobile_num').val();
+                      var mob = mob.replace(/\s+/g, '');
+                      $.post("/detail", { "service": mob }, function (d) {
+                        if(d.status==500){
+
+                        }
+                        else {
+                          $('#rechare-card').html(" ");
+                          oprator = d.data[0].operator_code;
+                          console.log(d);
+                          $('<option value="' + d.data[0].operator_code + '">' + d.data[0].service + '</option>').appendTo('#rechare-card');
+                        }
+                        
+                      });
+                    }
+                  });
+
+                  $(document).on("click", "#Recharge_amount", function () {
+                    var amount = $(this).data().id;
+                    $('#amount').val(amount);
+                    $('#myModal').modal('hide');
+                  });
+                    
+                  $.get("/operator",function(d){
+                     var data=d.data;
+                     for(i in data){
+                       $('<option value="'+data[i].operator_code+'">'+data[i].service+'</option>').appendTo('#rechare-card');
+                     }
+                  });
+
+                  $('.dth-recharge').on("click", function () {
+                    alert("me");
+                  });
+                </script>
+
+                <script>
+                  function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                      tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                      tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                  }
+
+                  // Get the element with id="defaultOpen" and click on it
+                  document.getElementById("defaultOpen").click();
+                </script>
+
+                <div id="menu2" class="tab-pane fade">
+                  <h3>Payment Electricity Bill</h3>
+                  <p>
+                    <!-- <form> -->
+
+                    <div class="floated-label-wrapper form-group">
+                      <label for="email">Select Operator</label>
+                      <select id="metro" name="metro" class="form-control recharge-form">
+                        <option value="AT">Delhi</option>
+                        <option value="VF">Airtel</option>
+                        <option value="ID">Videocon</option>
+                      </select>
+                      <span>
+                        <a href="#">Browse Plan</a>
+                      </span>
+                    </div>
+
+                    <div class="floated-label-wrapper form-group">
+                      <label for="full-name">Enter Your Customer ID</label>
+                      <input type="text" id="full-name" name="full name input" placeholder="+91 " class="form-control recharge-form">
+                    </div>
+
+                    <div class="floated-label-wrapper form-group">
+                      <label for="pass">Enter Amount</label>
+                      <input type="password" id="pass" name="password input" placeholder="Enter Amount" class="form-control recharge-form">
+                    </div>
+                    <button class="btn btn-primary rechrgebutton" type="button" value="Recharge Now">
+
+
+                      <!-- </form> -->
+                  </p>
+                </div>
+
+
+
+
+
+
+                <div id="menu3" class="tab-pane fade">
+                  <h3>Recharge Your Metro Card</h3>
+                  <p>
+                    <form>
+
+                      <div class="floated-label-wrapper form-group">
+                        <label for="email">Select Metro</label>
+                        <select id="metro" name="metro" class="form-control recharge-form">
+                          <option value="AT">Delhi Metro</option>
+                          <option value="VF">Mumbai Metro</option>
+                          <option value="ID">Hydrabad Metro</option>
+                        </select>
+                      </div>
+
+
+                      <div class="floated-label-wrapper form-group">
+                        <label for="full-name">Metro Card</label>
+                        <input type="text" id="full-name" name="full name input" placeholder="+91 " class="form-control recharge-form">
+                      </div>
+
+                      <div class="floated-label-wrapper form-group">
+                        <label for="pass">Enter Amount</label>
+                        <input type="password" id="pass" name="password input" placeholder="Enter Amount" class="form-control recharge-form">
+                      </div>
+                      <input class="btn btn-primary rechrgebutton" type="submit" value="Recharge Now">
+
+
+                    </form>
+                  </p>
+                </div>
+              </div>
+              </div>
+
+
+
+            </div>
+            <!-- <p class="rech-p">Lorem Epsum Raj Kumar Lorem Epsum Raj Kumar</p> -->
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+            <div class="marchent-selling-box">
+              
+              <div class="row">
+                  <div col-md-12 col-sm-12 col-xs-12>
+                      <div id="myCarousel" class="carousel slider-top-offeer slide" data-ride="carousel" >
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                    
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                    
+                          <div class="item active">
+                             <a href="#"><img src="images/banee11212.jpg" alt="Los Angeles" style="width:100%;" title="Freedom Offer"></a>
+                           
+                          </div>
+                    
+                          <div class="item">
+                             <a href="#"><img src="images/_giftcard-offer.jpg" alt="Los Angeles" style="width:100%;" title="book-gift-Card"></a>
+                          </div>
+                        
+                          <div class="item">
+                            <a href="https://www.irctc.co.in/eticketing/loginHome.jsf"> <img src="images/irctc121.jpg" alt="Los Angeles" style="width:100%;" title="book train ticket"></a>
+                          </div>
+                      
+                        </div>
+                    
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+            
+            
+            <div class="marchent-selling-box">
+                <div class="marchnt-sell111">
+                    <h2 class="marchn11">What Our Merchant Selling </h2>
+                    
+                    <div class="marchent-ser12121">
+                         <ul class="rechrge-item11">
+                <li class="tr1 text-center active">
+                  <a href="#">
+                    <img src="images/more-icon/electronics121.png">
+                    <label class="rechrge-cap">Electronics</label>
+                  </a>
+                </li>
+                <li class="tr1 text-center dth-recharge">
+                  <a href="#">
+                    <img src="images/more-icon/fashion.png">
+                    <label class="rechrge-cap">Fashion</label>
+                  </a>
+                </li>
+                <li class="tr1 text-center">
+                  <a  href="#">
+                    <img src="images/more-icon/home-kitchen.png">
+                    <label class="rechrge-cap">Home/Kitchen</label>
+                  </a>
+                </li>
+
+                </a>
+                </li>
+                <li class="text-center tr1">
+                  <a href="#">
+                    <img src="images/more-icon/Health12.png">
+                    <label class="rechrge-cap">Health</label>
+                  </a>
+                </li>
+                <li class="text-center tr1">
+                  <a href="#">
+                    <img src="images/more-icon/books.png">
+                    <label class="rechrge-cap">Books</label>
+                  </a>
+                </li>
+                
+                 <li class="tr1 text-center">
+                  <a href="#">
+                   <img src="/images/more-icon/repair_car-512.png">
+                    <label class="rechrge-cap">Automobiles</label>
+                  </a>
+                </li>
+                 <li class="tr1 text-center">
+                  <a href="#">
+                   <img src="/images/more-icon/insurance12121.png">
+                    <label class="rechrge-cap">Insurance</label>
+                  </a>
+                </li>
+                 <li class="tr1 text-center">
+                  <a href="#">
+                   <img src="/images/more-icon/match1122.png">
+                    <label class="rechrge-cap">Sports</label>
+                  </a>
+                </li>
+                 <li class="tr1 text-center">
+                  <a href="#">
+                   <img src="/images/more-icon/funiture.png">
+                    <label class="rechrge-cap">Furniture</label>
+                  </a>
+                </li>
+                <li class="tr1 text-center">
+                  <a href="#">
+                   <img src="images/grid1515.png">
+                    <label class="rechrge-cap">More</label>
+                  </a>
+                </li>
+              </ul>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!--       End Racharge section          -->
+
+    <!--      Services section          -->
+    <section class="Services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="booking">
+              <h3>BOOKING</h3>
+              <ul class="booking-pr">
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/booking1.png">
+                    <div class="caption cap-text">
+                      <p>Movies</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/booking2.png">
+                    <div class="caption cap-text">
+                      <p>Trains</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/booking3.png">
+                    <div class="caption cap-text">
+                      <p>Bus</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/booking4.png">
+                    <div class="caption cap-text">
+                      <p>Flights</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/booking5.png">
+                    <div class="caption cap-text">
+                      <p>Hotels</p>
+                    </div>
+                  </a>
+                </li>.
+                <li class="text-center">
+                  <a href="/products/view_more">
+                    <img src="images/more.png">
+                    <div class="caption cap-text">
+                      <p>More..</p>
+                    </div>
+                  </a>
+                </li>
+                <!-- <li><a href="#"><img src="images/booking6.png"  ></a></li> -->
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+            <div class="Services">
+              <h3>SERVICES</h3>
+
+              <ul class="Services-pr">
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/Services1.png">
+                    <div class="caption cap-text">
+                      <p>Matrimonial</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/Services2.png">
+                    <div class="caption cap-text">
+                      <p>Automobile</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/Services3.png">
+                    <div class="caption cap-text">
+                      <p>Web Designs</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="#">
+                    <img src="images/Services4.png">
+                    <div class="caption cap-text">
+                      <p>Management</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="text-center">
+                  <a href="/services">
+                    <img src="images/more.png">
+                    <div class="caption cap-text">
+                      <p>More..</p>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--    End  Services section          -->
+
+
+
+
+
+
+
+    <!-- ============  Celebiration Section =========== -->
+
+    <section class="Celebiration">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-5 col-xs-12">
+            <div class="cele-offer1">
+              <ul>
+                <li onclick="cele()">
+                  <img src="images/portalposter1011.jpg" style="border-radius: 5px 5px 0 0;">
+                </li>
+                <li onclick="cashbak()">
+                  <img src="images/portalposter1102.jpg">
+                </li>
+                <li onclick="paycashbak()">
+                  <img src="images/portalposter1003.jpg"> </li>
+              </ul>
+              <img src="images/arrocele.png" style="display:block; height:30px; width:20px; margin-left:99%; margin-top:-92%;"
+                id="img1">
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-7 hidden-xs">
+            <div class="cele-offer2">
+              <img src="images/portalposter1011.jpg" id="cele_preview">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============ End Celebiration Section =========== -->
+
+
+
+
+
+
+
+
+    <!-- ============ Ecmrece product Section =========== -->
+
+
+
+    <section class="e-section">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="e-product">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel pr-panel ">
+                  <div class="panel-heading pr-head">
+                    <h2 class="panel-title pr-title">Leads by Merchants
+                      <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                    </h2>
+                    <span class="pull-right right-panel">
+                      <!-- Tabs -->
+                      <ul class="nav panel-tabs">
+                        <li class="active">
+                          <a href="#tab1" data-toggle="tab">Mobiles</a>
+                        </li>
+                        <li>
+                          <a href="#tab2" data-toggle="tab">Fashion</a>
+                        </li>
+                        <li>
+                          <a href="#tab3" data-toggle="tab">Home &amp; Kitchen</a>
+                        </li>
+                        <li>
+                          <a href="#tab4" data-toggle="tab">Books</a>
+                        </li>
+                        <li>
+                          <a href="/products/view_more">More...</a>
+                        </li>
+
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="panel-body pr-body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab1">
+
+                        <div class="container" style="width: 100%;">
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="carousel slide" id="itemsliderm">
+                                <div class="carousel-inner mobile-view">
+                                  <!--  rendor mobile-view -->
+                                  <div class="item active">
+                                     <div class="row mobile-view">
+                                    
+                                   
+                                   
+                                
+                                  
+                                  </div>
+                                  </div>
+                                </div>
+
+                                <div id="slider-control">
+                                  <a class="left carousel-control" href="#itemsliderm" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                  </a>
+                                  <a class="right carousel-control" href="#itemsliderm" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="tab-pane" id="tab2">
+                        <div class="container" style="width: 100%;">
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="carousel slide" id="itemsliderf">
+                                <div class="carousel-inner fashion-view">
+                                  <!--  rendor fashion-view -->
+
+                                  <div class="item active">
+                                      <div class="row fashion-view">
+                                     
+                                    
+                                    
+                                 
+                                   
+                                   </div>
+                                   </div>
+                                  
+                                </div>
+
+                                 <div id="slider-control">
+                                  <a class="left carousel-control" href="#itemsliderf" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                  </a>
+                                  <a class="right carousel-control" href="#itemsliderf" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="tab3">
+                        <div class="container" style="width: 100%;">
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="carousel slide" id="itemsliderh">
+                                <div class="carousel-inner home-kitchen">
+                                    <!--  rendor Home-kitchen -->
+                                    <div class="item active">
+                                        <div class="row home-kitchen">
+                                       
+                                      
+                                      
+                                   
+                                     
+                                     </div>
+                                     </div>                           
+
+                                </div>
+
+                                <div id="slider-control">
+                                  <a class="left carousel-control" href="#itemsliderh" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                  </a>
+                                  <a class="right carousel-control" href="#itemsliderh" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="tab4">
+                        <div class="container" style="width: 100%;">
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="carousel slide" id="itemslidere">
+                                <div class="carousel-inner books">
+
+                                    <div class="item active">
+                                        <div class="row books">
+                                       
+                                      
+                                      
+                                   
+                                     
+                                     </div>
+                                     </div>
+
+                                </div>
+
+                                <div id="slider-control">
+                                  <a class="left carousel-control" href="#itemslidere" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                  </a>
+                                  <a class="right carousel-control" href="#itemslidere" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- ============ End Ecmrece product Section =========== -->
+
+
+
+
+
+
+
+
+
+    <!-- ============ Deals And testimonials  Section =========== -->
+
+
+
+    <section class="Deals-section">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="Deals-customer">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+
+                <div class="Deals-img">
+                  <h2>Freedom Club Deals
+                    <i class="fa fa-tags de-icon" aria-hidden="true"></i>
+                  </h2>
+                  <img src="images/deals.png" class="img-responsive">
+                </div>
+              </div>
+
+
+
+              <div class="col-md-4 col-sm-5 col-xs-12 testi">
+                <h2>
+                  <i class="fa fa-comments" aria-hidden="true"></i> What Customer Speaks</h2>
+                <div class="container" style="width: 100% !important;">
+
+                  <div class="customer">
+
+
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="carousel slide cust-sll" data-ride="carousel" id="quote-carousel1">
+                          <!-- Bottom Carousel Indicators -->
+                          <ol class="carousel-indicators indi">
+                            <li data-target="#quote-carousel1" data-slide-to="0" class=""></li>
+                            <li data-target="#quote-carousel1" data-slide-to="1" class="active"></li>
+                            <li data-target="#quote-carousel1" data-slide-to="2" class=""></li>
+                          </ol>
+
+                          <!-- Carousel Slides / Quotes -->
+                          <div class="carousel-inner teti-sli">
+
+                            <!-- Quote 1 -->
+                            <div class="item">
+
+                              <div class="row">
+                                <div class="cust-section">
+                                  <div class="col-sm-12 col-md-12 cop text-center">
+                                    <div class="cust-img">
+                                      <img class=" img-responsive img-circle" src="images/Pramod.png">
+                                    </div>
+                                    <br>
+                                    <div class="cust-comment text-center">
+                                      <p>
+                                        <strong>
+                                          <i> Pramod Singh :-</i>
+                                        </strong>Nice thoughts you guys are doing well. keep it up, We are waiting for your launching.
+                                        Online Shopping has taken the industry by storm.. but your concept is different more
+                                        good than other.
+                                        <br>
+                                        <!--<a href="#">Read More..</a>-->
+                                      </p>
+
+                                    </div>
+
+                                  </div>
+                                </div>
+
+
+
+                              </div>
+
+                            </div>
+                            <!-- Quote 2 -->
+                            <div class="item active">
+                              <div class="row">
+                                <div class="cust-section">
+                                  <div class="col-sm-12 col-md-12 cop text-center">
+                                    <div class="cust-img">
+                                      <img class=" img-responsive img-circle" src="images/nitin.png">
+                                    </div>
+                                    <br>
+                                    <div class="cust-comment text-center">
+                                      <p>
+                                        <strong>
+                                          <i>Nitin Srivastav :-</i>
+                                        </strong> Excellent idea! You are giving 100% cashback, the most good things of your website/app
+                                        you are providing 100% cashback on every shopping that amazing. I am pretty excited
+                                        to do shopping on your website.
+                                        <br>
+                                        <!--<a href="#">Read More..</a>-->
+                                      </p>
+                                    </div>
+
+                                  </div>
+                                </div>
+
+
+
+                              </div>
+                            </div>
+                            <!-- Quote 3 -->
+                            <div class="item">
+                              <div class="row">
+                                <div class="cust-section">
+                                  <div class="col-sm-12 col-md-12 cop text-center">
+                                    <div class="cust-img">
+                                      <img class=" img-responsive img-circle" src="images/Shivani.png">
+                                    </div>
+                                    <br>
+                                    <div class="cust-comment text-center">
+                                      <p>
+                                        <strong>
+                                          <i>Shivani :-</i>
+                                        </strong>:I am really excited, when are you launching your app, your concept to good than
+                                        other, most good things you are deal in different-different sector. your app will
+                                        be fire in India market.
+                                        <br>
+                                        <!--<a href="#">Read More..</a>-->
+                                      </p>
+                                    </div>
+
+                                  </div>
+                                </div>
+
+
+
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============ End Deals And testimonials Section =========== -->
+
+
+
+
+
+
+
+
+
+    <!-- ============ Discount ans coupon Section =========== -->
+    <section class="discount-coupon">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="cop-container">
+
+            <h2>Discount Coupons
+              <i class="fa fa-tag" aria-hidden="true"></i>
+            </h2>
+
+            <div class='row'>
+              <div class='col-md-12'>
+                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                  <!-- Bottom Carousel Indicators -->
+
+
+                  <!-- Carousel Slides / Quotes -->
+                  <div class="carousel-inner">
+
+                    <!-- Quote 1 -->
+                    <div class="item active">
+
+                      <div class="row">
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun1.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun2.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun1.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun3.png">
+                        </div>
+
+
+                      </div>
+
+                    </div>
+                    <!-- Quote 2 -->
+                    <div class="item">
+                      <div class="row">
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun1.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun2.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun1.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun3.png">
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <!-- Quote 3 -->
+                    <div class="item">
+                      <div class="row">
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun1.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun2.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun1.png">
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-12 cop text-center">
+                          <img class=" img-responsive" src="images/copun3.png">
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Carousel Buttons Next/Prev -->
+                  <a data-slide="prev" href="#quote-carousel" class="left carousel-control">
+                    <i class="fa fa-chevron-left"></i>
+                  </a>
+                  <a data-slide="next" href="#quote-carousel" class="right carousel-control">
+                    <i class="fa fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============ End Discount ans coupon Section =========== -->
+
+
+
+
+
+    <!-- ============  Policy Section =========== -->
+
+
+    <section class="Policy-secion">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="policy">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="policy-img1">
+                  <img src="images/policyimg1.png">
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="policy-img1">
+                  <img src="images/policyimg2.png">
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="policy-img1">
+                  <img src="images/policyimg3.png">
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="policy-img1">
+                  <img src="images/policyimg4.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ============ End Policy Section =========== -->
+
+
+
+    <!-- ============  Subscribe  Section =========== -->
+
+
+    <section class="Subscribe-section">
+
+      <div class="container-fluid">
+        <div class="container">
+          <div class="Subscribe">
+            <div class="row">
+              <div class="col-md-2 col-sm-2">
+                <div class="subsimg1">
+                  <img src="images/subs1.png">
+                </div>
+              </div>
+
+              <div class="col-md-8 col-sm-8">
+                <div class="subs-form text-center">
+                  <h2>Newsletter</h2>
+
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                  <form class="form-horizontal">
+
+                    <!-- Form Name -->
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="control-label" for="email"></label>
+                      <input id="email" name="email" type="email" placeholder="Enter Your Email" class="form-control input-md" required>
+                      <br>
+                      <button id="subs" name="subs" class="btn btn-default">GET NOTIFIED</button>
+                    </div>
+                  </form>
+                  <!-- Button -->
+
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-2">
+                <div class="subsimg2">
+                  <img src="images/subs2.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============  END Subscribe  Section =========== -->
+
+    <!-- ============  Download app  Section =========== -->
+
+    <section class="app-section">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="app">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="app-img">
+                  <img src="http://www.freedomclub.in/static/images/app100101.jpg">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="download-app">
+                  <ul>
+                    <li>
+                      <div class="applogo-img text-center">
+                        <img src="images/applogo.png" class="img-responsive">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="appstore-img text-center">
+                        <img src="images/appstore.png" class="img-responsive">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="playstore-img text-center">
+                        <img src="images/playstore.png" class="img-responsive">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============  END Download App  Section =========== -->
+
+
+
+
+    <!-- ============  Fotter   Section =========== -->
+
+
+    <% include ./partials/home-footer %>
+
+      <!-- ============  END Fotter  Section =========== -->
+
+
+
+
+
+      <script>
+
+        $(function () {
+          var showClass = 'show';
+
+          $('input').on('checkval', function () {
+            var label = $(this).prev('label');
+            if (this.value !== '') {
+              label.addClass(showClass);
+            } else {
+              label.removeClass(showClass);
+            }
+          }).on('keyup', function () {
+            $(this).trigger('checkval');
+          });
+        });
+
+
+      </script>
+
+      <script>
+        // When the DOM is ready, run this function
+        $(document).ready(function () {
+          //Set the carousel options
+          $('#quote-carousel, #quote-carousel1').carousel({
+            pause: true,
+            interval: 4000,
+          });
+        });
+      </script>
+
+
+
+      <script>
+        $(document).ready(function () {
+
+          $('#itemslider').carousel({ interval: 3000 });
+
+          $('.carousel-showmanymoveone .item').each(function () {
+            var itemToClone = $(this);
+
+            for (var i = 1; i < 6; i++) {
+              itemToClone = itemToClone.next();
+
+              if (!itemToClone.length) {
+                itemToClone = $(this).siblings(':first');
+              }
+
+              itemToClone.children(':first-child').clone()
+                .addClass("cloneditem-" + (i))
+                .appendTo($(this));
+            }
+          });
+        });
+
+      </script>
+      <script>
+        $(document).ready(function () {
+          $("#share").click(function () {
+            $(".social-btns").toggle();
+          });
+        });
+      </script>
+
+
+
+      <script>
+
+        var cele1 = "images/portalposter1011.jpg";
+        var cele2 = "images/portalposter1102.jpg";
+        var cele3 = "images/portalposter1003.jpg";
+
+        function cele() {
+          document.getElementById('cele_preview').src = cele1;
+
+          document.getElementById('img1').style.marginTop = '-92%';
+
+        }
+        function cashbak() {
+          document.getElementById('cele_preview').src = cele2;
+          document.getElementById('img1').style.marginTop = '-58%';
+        }
+        function paycashbak() {
+          document.getElementById('cele_preview').src = cele3;
+          document.getElementById('img1').style.marginTop = '-22%';
+        }
+      </script>
+      <script type="text/javascript">
+        $.get("/getmobile", function (d) {
+          var data=d.data;
+          for (i in data) {           
+            $('<div class="item">' +
+              '<div class="col-xs-12 col-sm-6 col-md-2" >' + '<a href="/products/product_detail/'+data[i].id+'">' +
+              '<img src="/product_img/'+data[i].product_image+'" class="img-responsive center-block">' +
+              '</a>' +
+              '<h5 class="text-center">'+data[i].product_name+'</h5>' +
+              '<i class="fa fa-inr" aria-hidden="true"></i> 15000</h6>' +
+              '</div>' +
+              '</div>').appendTo('.mobile-view');
+          }
+        });
+
+        $.get("/getfashion", function (d) {
+          var data=d.data;
+          for (i in data) {
+            console.log(data[i].product_image);
+            $('<div class="item">' +
+              '<div class="col-xs-12 col-sm-6 col-md-2" >' + '<a href="/products/product_detail/'+data[i].id+'">' +
+              '<img src="/product_img/'+data[i].product_image +'" class="img-responsive center-block">' +
+              '</a>' +
+              '<h5 class="text-center">'+data[i].product_name+'</h5>' +
+              '<i class="fa fa-inr" aria-hidden="true"></i> 15000</h6>' +
+              '</div>' +
+              '</div>').appendTo('.fashion-view');
+          }
+        });
+
+        $.get("/homekitchen", function (d) {
+          var data=d.data;
+          for (i in data) {
+            $('<div class="item">' +
+              '<div class="col-xs-12 col-sm-6 col-md-2" >' + '<a href="/products/product_detail/'+data[i].id+'">' +
+              '<img src="/product_img/'+data[i].product_image +'" class="img-responsive center-block">' +
+              '</a>' +
+              '<h5 class="text-center">'+data[i].product_name +'</h5>' +
+              '<i class="fa fa-inr" aria-hidden="true"></i> 15000</h6>' +
+              '</div>' +
+              '</div>').appendTo('.home-kitchen');
+          }
+        });
+
+        $.get("/books", function (d) {
+         var data=d.data;
+          for (i in data) {
+            $('<div class="item">' +
+              '<div class="col-xs-12 col-sm-6 col-md-2" >' + '<a href="/products/product_detail/'+data[i].id+'">' +
+                '<img src="/product_img/'+data[i].product_image +'" class="img-responsive center-block">' +
+              '</a>' +
+              '<h5 class="text-center">'+data[i].product_name +'</h5>' +
+              '<i class="fa fa-inr" aria-hidden="true"></i> 15000</h6>' +
+              '</div>' +
+              '</div>').appendTo('.books');
+          }
+        });
+      </script>
+      
+      
+      
+
+
+        
+          <script>
+            $(function() {
+    $('#login-form-link').click(function(e) {
+      $("#login-form").delay(100).fadeIn(100);
+    $("#register-form").fadeOut(100);
+    $('.register').removeClass('active111001');
+
+    $('.login').addClass('active111001');
+    e.preventDefault();
+  });
+  $('#register-form-link').click(function(e) {
+    $("#register-form").delay(100).fadeIn(100);
+    $("#login-form").fadeOut(100);
+    $('.login').removeClass('active111001');
+    $('.register').addClass('active111001');
+    e.preventDefault();
+  });
+
+});
+
+          </script>
+</body>
+
+
+
+
+</html>

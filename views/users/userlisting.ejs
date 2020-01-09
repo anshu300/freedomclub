@@ -1,0 +1,43 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Manage My Profile <span style="float:right; margin-top:-22px;"><% include ../partials/common %></h4>
+                     <table>
+                         <thead>
+                           <!-- <th>name</th> -->
+                           <th>country</th> 
+                           <th>city</th>
+                           <th>sate</th>                             
+                           <th>first name</th>
+                           <th>email</th>
+                         </thead>
+                         <tbody>
+
+                            <% results.forEach(function(res) { %>
+                                <tr>
+                             
+                                    
+                                    <td><%= res.country %></td>
+                                    <td><%= res.city %></td>
+                                    <td><%= res.state %></td>
+                                    <td><%= res.first_name %></td>
+                                    <td><%= res.email %></td>
+                                    
+                                    
+                                </tr>
+                             <% }); %>
+                       
+                            
+                         </tbody>
+                     </table>
+                </div>
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>

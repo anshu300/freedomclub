@@ -1,0 +1,488 @@
+<style>
+    .mat-div {
+        padding: 35px 0 0 0;
+        position: relative;
+    }
+
+    .mat-div:after,
+    .mat-div:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #e2e2e2;
+        bottom: 0;
+        left: 0;
+        transition: all 0.5s;
+    }
+
+    .mat-div::after {
+        background-color: #630;
+        transform: scaleX(0);
+    }
+
+    .mat-label {
+        display: block;
+        font-size: 16px;
+        transform: translateY(25px);
+        color: #000;
+        transition: all 0.5s;
+    }
+
+    .mat-input {
+        position: relative;
+        background: transparent;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 5px 0;
+        font-size: 16px;
+    }
+
+    .is-active::after {
+        transform: scaleX(1);
+    }
+
+    .is-active .mat-label {
+        color: #630;
+    }
+
+    .is-completed .mat-label {
+        font-size: 12px;
+        transform: translateY(0);
+    }
+
+    .m-add-btn {
+        color: #fff;
+    }
+
+    .m-add-btn:hover i {
+        color: #fff;
+        transform: rotate(360deg) scale(1.05);
+        transition: 0.5s;
+    }
+
+    .m-add-btn:hover {
+        color: #fff;
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+
+    .m-btn {
+        padding-top: 40px;
+    }
+
+    .addmoneysect {
+        margin-top: 20px;
+        display: none;
+    }
+
+
+    .addmoneysect h3 {
+        padding: 30px 0px;
+    }
+
+    .mmmmm {
+        border: 1px solid #630;
+        box-shadow: 0 0 10px #630;
+    }
+
+
+    div.bhoechie-tab-container {
+        z-index: 10;
+        background-color: #ffffff;
+        padding: 0 !important;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        margin-left: 50px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        background-clip: padding-box;
+        opacity: 0.97;
+        filter: alpha(opacity=97);
+    }
+
+    div.bhoechie-tab-menu {
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group {
+        margin-bottom: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group>a {
+        margin-bottom: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group>a .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a .fa {
+        color: #630;
+        background: none;
+    }
+
+    div.bhoechie-tab-menu div.list-group>a:first-child {
+        border-top-right-radius: 0;
+        -moz-border-top-right-radius: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group>a:last-child {
+        border-bottom-right-radius: 0;
+        -moz-border-bottom-right-radius: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group>a.active,
+    div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a.active .fa {
+        background-color: #630;
+        background-image: #5A55A3;
+        color: #ffffff;
+    }
+
+    div.bhoechie-tab-menu div.list-group>a.active:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-top: -13px;
+        border-left: 0;
+        border-bottom: 13px solid transparent;
+        border-top: 13px solid transparent;
+        border-left: 10px solid #630;
+    }
+
+    div.bhoechie-tab-content {
+        background-color: #ffffff;
+        /* border: 1px solid #eeeeee; */
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+        display: none;
+    }
+
+    .credit-card-box .panel-title {
+        display: inline;
+        font-weight: bold;
+    }
+
+    .credit-card-box .form-control.error {
+        border-color: red;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+    }
+
+    .credit-card-box label.error {
+        font-weight: bold;
+        color: red;
+        padding: 2px 8px;
+        margin-top: 2px;
+    }
+
+    .credit-card-box .payment-errors {
+        font-weight: bold;
+        color: red;
+        padding: 2px 8px;
+        margin-top: 2px;
+    }
+
+    .credit-card-box label {
+        display: block;
+    }
+
+    /* The old "center div vertically" hack */
+
+    .credit-card-box .display-table {
+        display: table;
+    }
+
+    .credit-card-box .display-tr {
+        display: table-row;
+    }
+
+    .credit-card-box .display-td {
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    /* Just looks nicer */
+
+    .credit-card-box .panel-heading img {
+        min-width: 180px;
+    }
+</style>
+
+
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Add Money  <span style="float:right; margin-top:-22px;"><% include ../partials/common %></h4>
+                    <div class="tz-2-main-com" style="overflow:auto;">
+                        <!-- <div class="tz-2-main-1">
+                        <div class="tz-2-main-2"> <img src="images/icon/d1.png" alt="" /><span>All Listings</span>
+                            <p>All the Lorem Ipsum generators on the</p>
+                            <h2>04</h2> </div>
+                    </div> -->
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <i class="large material-icons">account_balance_wallet</i>
+                                <span>
+                                    <h5>
+                                        <i class="fa fa-inr" aria-hidden="true"></i> <span class="amount"><%= TotalAmount %> </span>.00</h5>
+                                         <p>Your Wallet balance</p>
+                                </span>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="mat-div">
+                                    <label for="first-name" class="mat-label">Enter Amount</label>
+                                    <input type="number" class="mat-input" id="Amount">
+                                </div>
+                            </div>
+                            <div class="col-md-3 m-btn">
+                                <button class="btn btn-large btn-default m-add-btn" id="AddMoney">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>Add Money</button>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="addmoneysect">
+                            <h3>Process to add money</h3>
+                            <div class="row mmmmm">
+
+                                <div class="col-lg-4 col-md-8 col-sm-8 col-xs-8 bhoechie-tab-menu">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item active text-center">
+                                            <h4 class="fa fa-inr"></h4>
+                                            <br/>BHIM UPI
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            <h4 class="fa fa-credit-card"></h4>
+                                            <br/>Debit Card
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            <h4 class="glyphicon glyphicon-credit-card"></h4>
+                                            <br/>Credit Card
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            <h4 class="fa fa-university"></h4>
+                                            <br/>Net Banking
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            <h4 class="glyphicon glyphicon-credit-card"></h4>
+                                            <br/>Credit Card
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bhoechie-tab">
+                                    <!-- flight section -->
+                                    <div class="bhoechie-tab-content active">
+
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-12">
+
+
+                                                <!-- CREDIT CARD FORM STARTS HERE -->
+                                                <div class="panel panel-default credit-card-box" style="border:1px solid #000;">
+                                                    <div class="panel-heading display-table">
+                                                        <div class="row display-tr">
+                                                            <h3 class="panel-title display-td">Payment Details</h3>
+                                                            <div class="display-td">
+                                                                <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <div class="form-group">
+                                                                        <label for="cardNumber">CARD NUMBER</label>
+                                                                        <div class="input-group">
+                                                                            <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required
+                                                                                autofocus style="height: 40px;" />
+                                                                            <span class="input-group-addon">
+                                                                                <i class="fa fa-credit-card"></i>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-xs-7 col-md-7">
+                                                                    <div class="form-group">
+                                                                        <label for="cardExpiry">EXPIRATION DATE</label>
+                                                                        <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xs-5 col-md-5 pull-right">
+                                                                    <div class="form-group">
+                                                                        <label for="cardCVC">CV CODE</label>
+                                                                        <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <div class="form-group">
+                                                                        <label for="couponCode">COUPON CODE</label>
+                                                                        <input type="text" class="form-control" name="couponCode" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <button class=" btn btn-large btn-default m-add-btn btn-block" type="button">Proceed Securely</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="display:none;">
+                                                                <div class="col-xs-12">
+                                                                    <p class="payment-errors"></p>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- CREDIT CARD FORM ENDS HERE -->
+
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <!-- train section -->
+                                    <div class="bhoechie-tab-content">
+                                        <center>
+                                            <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#630"></h1>
+                                            <h2 style="margin-top: 0;color:#630">Comming Soon</h2>
+                                            <h3 style="margin-top: 0;color:#630">Train Reservation</h3>
+                                        </center>
+                                    </div>
+
+                                    <!-- hotel search -->
+                                    <div class="bhoechie-tab-content">
+                                        <center>
+                                            <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#630"></h1>
+                                            <h2 style="margin-top: 0;color:#630">Comming Soon</h2>
+                                            <h3 style="margin-top: 0;color:#630">Hotel Directory</h3>
+                                        </center>
+                                    </div>
+                                    <div class="bhoechie-tab-content">
+                                        <center>
+                                            <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#630"></h1>
+                                            <h2 style="margin-top: 0;color:#630">Comming Soon</h2>
+                                            <h3 style="margin-top: 0;color:#630">Restaurant Diirectory</h3>
+                                        </center>
+                                    </div>
+                                    <div class="bhoechie-tab-content">
+                                        <center>
+                                            <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#630"></h1>
+                                            <h2 style="margin-top: 0;color:#630">Comming Soon</h2>
+                                            <h3 style="margin-top: 0;color:#630">Credit Card</h3>
+                                        </center>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>
+
+        <script type="text/javascript">
+            // $('#AddMoney').on("click", function () {
+            //     var amount = $('#Amount').val();
+            //     if(amount.length==0){
+            //         alert(" please Fill Amount");
+            //         return false;
+            //     }
+            //     var data = {};   
+            //     data.deposit = amount;
+            //     $.ajax({
+            //         type: 'POST',
+            //         url: '/users/wallet',
+            //         data: JSON.stringify(data),
+            //         contentType: 'application/json',
+            //         success: function (data) {
+            //             console.log(data);
+            //             if (data.code == 200) {
+            //                 var am = $('.amount').html();
+            //                 var total = parseInt(am) + parseInt(data.amount)
+            //                 $('.amount').html(total);
+            //                 $('#Amount').val(" ");
+            //             }
+            //         }
+            //     });
+            // });
+        </script>
+        <script>
+            $(".mat-input").focus(function () {
+                $(this).parent().addClass("is-active is-completed");
+            });
+
+            $(".mat-input").focusout(function () {
+                if ($(this).val() === "")
+                    $(this).parent().removeClass("is-completed");
+                $(this).parent().removeClass("is-active");
+            })
+        </script>
+
+
+
+        <script>
+
+            $(document).ready(function () {
+                $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+                    e.preventDefault();
+                    $(this).siblings('a.active').removeClass("active");
+                    $(this).addClass("active");
+                    var index = $(this).index();
+                    $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+                    $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+                });
+            });
+        </script>
+
+        <script>
+            // $("#AddMoney").click(function () {
+            //     $(".addmoneysect").hide();
+            // });
+
+            // $("#AddMoney").click(function () {
+            //     $(".addmoneysect").show();
+            // });
+        </script>

@@ -1,0 +1,128 @@
+<!-- <style>
+    .select-wrapper {
+    position: relative;
+    /* display: table-header-group; */
+    padding-top: 0px !important;
+    border-bottom-width: 0px !important;
+    border-top-width: 0px !important;
+    border-right-width: 0px !important;
+    border-left-width: 0px !important;
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    border-radius:0px !important;
+    
+}
+.form-control{
+    border-radius:0px !important; 
+    height: 43px;
+    font-size: 13px;
+    font-weight: normal;
+}
+.select-wrapper span.caret{
+    display:none !important;
+}
+.select-wrapper input.select-dropdown {
+    display: none !important;
+}
+.tz-2-main h4{
+    color:#fff !important;
+    font-weight:bold !important;
+    font-size:18px !important;
+}
+
+</style> -->
+
+<% include ../partials/homepage-header %>
+<% include ../partials/common %>
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Your Recharge Details</h4>
+                    <div class="tz-2-main-com add-pr11" style="overflow:auto;">
+                        <!-- <div class="tz-2-main-1">
+                        <div class="tz-2-main-2"> <img src="images/icon/d1.png" alt="" /><span>All Listings</span>
+                            <p>All the Lorem Ipsum generators on the</p>
+                            <h2>04</h2> </div>
+                    </div> -->
+
+
+                        
+                    
+
+
+                                <form method="POST" action="/products/add_product" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <select class="form-control" name="category_id" id="industry">
+                                            <option value="" disabled selected>Industry*</option>
+                                            
+                                                <option value="">
+                                                    1
+                                                </option>
+                                                
+                                        </select>
+
+                                        <select name="subcategory_id" class="form-control sub_industry">
+
+                                        </select>
+                                        <select name="subofsub_id" class="form-control" id="first_industry">
+
+                                        </select>
+                                        <select name="subdsub_id" class="form-control" id="second_industry">
+
+                                        </select>
+
+                                        <div class="form-group">
+                                            <input type="text" name="product_name" required class="form-control" placeholder="Product Name">
+                                        </div>
+
+
+                                        <div class="form-group">
+
+                                            <input type="text" name="email" required value="" class="form-control" placeholder="Product Name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <span class="btn btn-info file-btn"> Browse File</span>
+                                            <input type="file" name="product_image" required class="btn btn-info file-select1011">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <textarea name="description" class="form-control" rows="5"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" name="mobile" required placeholder="address" class="form-control" value="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" name="address" required placeholder="address" class="form-control" value="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" name="pincode" required placeholder="pincode" class="form-control" value="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" name="lat" placeholder="latitude" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" name="lng" placeholder="longitude" class="form-control">
+                                        </div>
+
+                                        <input type="submit" value="submit" class="btn btn-primary btn-block pr-sub">
+                                    </div>
+                                </form>
+                    </div>
+                </div>
+            </div>
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>
+
+  
+  

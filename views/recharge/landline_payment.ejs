@@ -1,0 +1,84 @@
+<% include ../partials/homepage-header %>
+    <div class="container" style="margin-top:15px;">
+        <form class="form-horizontal" action="/sendData" method="post">
+
+            <input class="form-control" id="merchant_id" type="hidden" name="merchant_id" value="201710270001">
+            <input class="form-control" id="merchant_key" type="hidden" name="merchant_key" value="oqUl4D0LqA4plZw4reAX/K3UKJoQdet0k/N6X6K4Y5k=">
+            <input class="form-control" id="order_no" type="hidden" name="order_no" value="12345">
+            <input class="form-control" id="amount" type="hidden" name="amount" value="<%= amount %>">
+            <input class="form-control" id="txn_type" type="hidden" name="txn_type" value="SALE">
+            <input class="form-control" type="hidden" name="success_url" id="" value="http://freedomclub.in/response">
+            <input class="form-control" id="failure_url" type="hidden" name="failure_url" value="http://freedomclub.in/response">
+            <input class="form-control" id="cust_name" type="hidden" name="cust_name" value="<%= users.first_name %>">
+            <input class="form-control" id="email_id" type="hidden" name="email_id" value="<%= users.email %>">
+            <input class="form-control" id="mobile_no" type="hidden" name="mobile_no" value="<%= users.username %>">
+            <input class="form-control" id="unique_id" type="hidden" name="unique_id" value="<%= uniqid %>">
+            <input class="form-control" id="channel" type="hidden" name="channel" value="WEB">
+            <input class="form-control" id="country" type="hidden" name="country" value="IND">
+            <input class="form-control" id="currency" type="hidden" name="currency" value="INR">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box1" style="border: 1px solid #603814;line-height:3;text-align:center;border-radius: 5px;background: #fbe0ad;">
+                        <strong>Money in your Freedom Account</strong>
+                        <br>Rs.
+                        <span class="rest-amount">
+                            <% if(totalamu>0){ %>
+                            <%= totalamu %>
+                            <% } else{ %>
+                             0
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-1" style="text-align: center;line-height: 3;font-size: 30px;color: #603813;">
+                    <b>-</b>
+                </div>
+                <div class="col-md-3">
+                    <div class="box1" style="border: 1px solid #603814;line-height:3;text-align:center;border-radius: 5px;background: #fbe0ad;">
+                        <strong> Payment to be made</strong>
+                        <br>Rs.
+                        <span class="pay-amount">
+                            <%= amount %>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-3">
+                    <div class="box1">
+                        <input type="submit" value="pay now" class="btn btn-lg btn-block rechrgebutton">
+                        <button type="button" class="btn btn-lg btn-block" id="go">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+
+
+
+    <script type="text/javascript"> 
+        // var ramount = $('.rest-amount').html();
+        // var payamount = $('.pay-amount').html(); 
+        // var ram=ramount.trim(); 
+        // var payamt=payamount.trim();     
+        // if (ram >= payamt) {
+        //     console.log("me");
+        //     $('.rechrgebutton').hide();
+        // } else {
+        //     console.log("c");
+        //     $('#go').hide();
+        // }
+        $('#go').on("click", function () {
+            $.post("/recharge/landline_payment", { "ramount": 50 }, function (d) {
+                if (d.code == 200) {
+                    window.location.href = "/users/recharge";
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $("#order_no").val(Math.floor((Math.random() * 100000) + 1))
+        });
+    </script>

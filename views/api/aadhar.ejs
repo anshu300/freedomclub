@@ -1,0 +1,93 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<div class="container">
+    <h4>Create Account</h4>
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputName2">Mobile</label>
+                <input type="text" class="form-control" id="num">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">Aadhar number</label>
+                <input type="email" class="form-control" id="adh">
+            </div>
+            <button type="button" class="btn btn-primary">Send invitation</button>
+        </form>
+    </div>
+</div>
+
+<div class="container main" style="display: none;">
+    <h2 style="text-align: center;">Geeting User Information</h2>
+    <div class="contact-inner">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Name</label>
+                <label>Mobile</label>
+                <label>Created By</label>
+               
+            </div>
+            <div class="col-md-6" id="info">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.btn-primary').on("click",function(){
+        $('#info').html(" ");
+        $(this).html("Loading..");
+        var num=$('#num').val();
+        var adh=$('#adh').val();
+        $.post("/api/aadhar",{"mobile":num,"adh":adh},function(d){
+                console.log(d);
+        //  $('.main').css("display","block");
+        //  $('<div class="formvalue">'+d.userInfo.name +
+        // '</div>'+'<div class="formvalue">'+d.userInfo.mobileNo +'</div>'+
+        // '</div>'+'<div class="formvalue">'+d.userInfo.createdBy +'</div>').appendTo('#info')
+        });
+    });
+</script>
+
+<style>
+    .contact-inner {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+        display: block;
+        border: 1px solid #eee;
+        overflow: hidden;
+        background: #f2f2f2;
+    }
+
+    .contact-inner label {
+        border-right: 1px solid #ddd;
+        margin: 0;
+        padding: 10px 15px;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .contact-inner label:last-child {
+        border-bottom: none;
+    }
+
+    .contact-inner .formvalue {
+
+        margin: 0;
+        padding: 10px 15px;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .contact-inner .formvalue:last-child {
+        border-bottom: none;
+    }
+
+    .formvalue {
+        padding: 10px 15px;
+    }
+</style>

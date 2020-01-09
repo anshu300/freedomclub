@@ -1,0 +1,106 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Your Recharge Details</h4>
+                    <div class="tz-2-main-com add-pr11" style="overflow:auto;">
+                        <div class="row" style="margin-bottom:10px;">
+                            <select class="form-control" id="sele-pro">
+                                <option value="0">Select product</option>
+                                <% result.forEach(function(res) { %>
+                                   <option value="<%= res.id %>"><%= res.product_name %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                            <input type="text" name="name" id="enum" placeholder="offer text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <span class="btn btn-info file-btn"> Browse File</span>
+                            <input type="file" name="image" id="exampleInputFile" class="form-control file-select1011">
+                            </div>
+                            <button class="add btn btn-primary pr-sub" >Submit</button>
+                        </div>
+                    </div>
+                    <div class="row" id="services">
+
+                   </div>
+                    </div>
+                </div>
+            
+            <% include ../partials/notification %>
+    </div>
+ 
+    <% include ../partials/home-footer %>
+
+        <script type="text/javascript">
+            var formData
+            var product_id;
+            $('.img-cross10111').on("click",function(){
+                var me=$(this).closest('.col-md-3').hide();
+            });
+            $('#exampleInputFile').on("change", function () {
+                var file = document.getElementById("exampleInputFile").files[0];
+                formData = new FormData();
+                formData.append('images', file);
+            });
+
+            $('#sele-pro').on("change",function(){
+                product_id=$(this).val();
+            });
+
+             $('.add').on("click", function () {
+                    var name = $('#enum').val();
+                    formData.append('name', name);
+                    formData.append('product_id', product_id);
+                    $.ajax({
+                        method: 'POST',
+                        url: '/products/services',
+                        data: formData,
+                        dataType: 'json',
+                        async: false,
+                        type: 'post',
+                        processData: false,
+                        contentType: false,
+                        success: function (d) {
+                            console.log(d);
+                           // $('<img class="remove" data-id="' + d.id + '" src="/services_image/' + d.img + '" width="200" heigth="200">').appendTo('#services');
+                           $('<div class="col-md-3">'+'<div class="thumbnail">'+'<a href="javascript:void(0);"  class="img-cross10111" data-id="'+d.id+'">x</a>'+
+                              '<a href="#">'+ '<img src="/services_image/'+d.img+'"  alt="Fjords" style="width:100%">' +
+                                '<div class="caption">'+
+                                  '<p>'+name+'</p>'+
+                               ' </div>'+
+                              '</a>' +
+                            '</div>' +
+                            '</div>').appendTo('#services')
+                        }
+                    });
+                });
+
+            $(document).on("click", ".img-cross10111", function () {
+                var id = $(this).data().id;
+                var cls= $(this).closest('.col-md-3').hide(100);
+                $.post("/products/removeimg", { "id": id }, function (d) {
+                    console.log(d);
+                });
+            });
+        </script>
+
+        <!-- <script type="text/javascript">
+        $('.add').on("click",function(){
+           var name=$('#enum').val();
+           $.post("/products/services",{"name":name},function(d){
+               console.log(d);
+               $('#enum').val(" ");
+               $('<button class="btn remove">'+d.data+'</button>').appendTo('#services');
+           });
+        });
+        $(document).on("click",".remove",function(){
+            this.remove();
+        });
+    </script> -->

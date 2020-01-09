@@ -1,0 +1,140 @@
+<% include ../partials/homepage-header %>
+<% include ../partials/common %>
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <form method="POST" action="/products/gallery" enctype="multipart/form-data">
+                    <div class="tz-2-com tz-2-main">
+                        <h4>Your Recharge Details</h4>
+                        <div class="tz-2-main-com" style="overflow:auto;">
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Pr. Name</th>
+                                        <th>Pr. Image</th>
+                                        <th> Description </th>
+                                        <th> Edit </th>
+                                        <th> Delete </th>
+                                        <th> View </th>
+                                        <th> review </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% result.forEach(function(res) { %>
+                                        <tr>
+                                            <td>
+                                                <%= res.product_name %>
+                                            </td>
+                                            <td>
+                                                <img src="/product_img/<%= res.product_image %>" width="75" height="75">
+                                            </td>
+                                            <td>
+                                                <%= res.description %>
+
+                                            </td>
+                                            <td>
+                                                <a href="/products/edit/<%= res.id %>" title="Edit Product">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px; color:#00b6ff;"></i>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="javascript:void(0);" title="Delete Product">
+                                                    <i class="fa fa-trash" data-id="<%= res.id %>" aria-hidden="true" style="font-size:20px; color:#ff0b0b;"></i>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="javascript:void(0);" data-toggle="modal" data-target=".bs-example-modal-lg" title="View Product">
+                                                    <i class="fa fa-eye" data-id="<%= res.id %>" aria-hidden="true" style="font-size:20px; color:#1d880b;"></i>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="/products/review/<%= res.id %>" title="Edit Product">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px; color:#00b6ff;"></i>
+                                                </a>
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <% }); %>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+            <% include ../partials/notification %>
+    </div>
+
+    <% include ../partials/home-footer %>
+
+
+        <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <p id="pro_name"></p>
+                            <p id="add"></p>
+                            <p id="dis"></p>
+                            <p id="email"></p>
+                            <p id="lat"></p>
+                            <p id="lng"></p>
+                            <p id="mb"></p>
+                            <p id="pin"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <script type="text/javascript">
+            $('.fa-trash').on("click", function () {
+                var selector = $(this);
+                var id = $(this).data().id;
+                var res = confirm("Are You Want To Delete This Product");
+                if (res == true) {
+                    $.post("/products/delete", { "id": id }, function (d) {
+                        selector.closest('tr').hide('slow');
+                    });
+                } else {
+
+                }
+            });
+            $('.fa-eye').on("click", function () {
+                var id = $(this).data().id;
+                $.post("/products/get_prod_detail", { "id": id }, function (d) {
+                    console.log(d);
+                    $('#pro_name').html(d.data[0].product_name);
+                    $('#add').html(d.data[0].address);
+                    $('#dis').html(d.data[0].discription);
+                    $('#email').html(d.data[0].email);
+                    $('#lat').html(d.data[0].lat);
+                    $('#lng').html(d.data[0].lng);
+                    $('#mb').html(d.data[0].mobile);
+                    $('#pin').html(d.data[0].pincode);
+                });
+            });
+        </script>

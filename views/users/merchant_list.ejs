@@ -1,0 +1,42 @@
+<% include ../partials/homepage-header %>
+<!--<//% include ../partials/common %>-->
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Manage My Profile <span style="float:right; margin-top:-22px;"><% include ../partials/common %> </h4>
+                     <table>
+                         <thead>
+                           <!-- <th>name</th> -->
+                           <th>Vendor Nmae</th> 
+                           <th>Pincode</th>
+                           <th>id</th>                             
+
+                         </thead>
+                         <tbody>
+
+                            <% results.forEach(function(res) { %>
+                                <tr>
+                             
+                                    
+                                   
+                                    <td><%= res.vendor_name %></td>
+                                    <td><%= res.vendor_pincode %></td>
+                                    <td><%= res.id %></td>
+                                   
+                                    
+                                    
+                                </tr>
+                             <% }); %>
+                       
+                            
+                         </tbody>
+                     </table>
+                </div>
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>

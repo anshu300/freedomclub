@@ -1,0 +1,64 @@
+var express = require('express');
+var router = express.Router();
+var db = require('../dbconnection');
+var request = require("request");
+var jwt = require('jsonwebtoken');
+var base64urlEncode = require('base64url');
+var CryptoJS = require('crypto-js');
+var crypto = require('crypto');
+var hash = require('object-hash');
+var fs = require("fs");
+/*
+ * Get Total Amount
+*/
+router.get('/', function(req, res, next) {
+ var data= {
+    "header": {
+    "operatingSystem": "WEB"
+    },
+    "userInfo": {
+    "name": "4Ever",
+    "mobileNo": "7208536035",
+    "type": "1",
+    "createdBy": "AGGR001010"
+    },
+    "transaction": {
+    "requestType": "USR",
+    "requestSubType": "REG",
+    "channel": "WEB"
+    }
+  }
+ var header = {
+  "alg": "HS256",
+  "typ": "JWT"
+}
+  var token = jwt.sign({
+    "header": {
+    "operatingSystem": "WEB"
+    },
+    "userInfo": {
+    "name": "4Ever",
+    "mobileNo": "7208536035",
+    "type": "1",
+    "createdBy": "AGGR001010"
+    },
+    "transaction": {
+    "requestType": "USR",
+    "requestSubType": "REG",
+    "channel": "WEB"
+    }
+  }, 'shhhhh');
+  var agId="AGGR002547";
+  var meId="201710270001";
+  request.post({ url: 'http://114.143.100.102:81/agWalletAPI/v1/agg', form:{"agId":agId,"meId":meId,"payload":token}, function (err, httpResponse, body) {
+    var json = JSON.parse(body);
+     console.log(json);
+  }
+});
+});
+
+  router.get('/users', function(req, res, next) {
+    res.send({"data":"users"});
+ });
+
+  module.exports = router;

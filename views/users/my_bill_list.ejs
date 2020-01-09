@@ -1,0 +1,69 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Manage My Profile <span style="float:right; margin-top:-22px;"><% include ../partials/common %></h4>
+                    
+                    
+                    <table>
+                        <thead>
+                            <th>image</th>
+                            <th>amount</th>
+                            <th>Commision</th>
+                        </thead>
+                        <tbody>
+                            <% results.forEach(function(res) { %>
+                                <tr>
+
+                                    
+                                    <td>
+                                        <img width="200" height="200" src="/bill_images/<%= res.image %>">
+                                    </td>
+                                    <td>
+                                        <%= (1000*res.ugpv) %>
+                                    </td>
+                                    <td>
+                                        <%= (1000*res.ugpv*cm._value) %>
+                                    </td>
+                                    <% if(res.status==1){ %>
+                                        <td>
+                                                <button class="approve" data-id="<%=res.id %>" data-user="<%=res.user_id %>" data-gpv="<%=res.ugpv %>"><span class="btn-active" style="color:green">Active</span></button>
+                                        </td> 
+                                   <% }; %>
+
+
+                                   <% if(res.status==2){ %>
+                                    <td>
+                                            <button class="approve" data-id="<%=res.id %>" data-user="<%=res.user_id %>" data-gpv="<%=res.ugpv %>"><span  class="btn-active<%=res.id %>" style="color:green">Inactive</span></button>
+                                    </td> 
+                                 <% }; %>
+
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>
+
+
+    <script type="text/javascript">
+     $('.approve').on("click",function(){
+         var id=$(this).data().id; 
+         var gpv=$(this).data().gpv;
+         var uid=$(this).data().user;
+         var pincode=<%=pincode %>;
+         $.post("/users/approved",{"id":id,"uid":uid,"gpv":gpv,"pincode":pincode},function(d){
+             if(d.data.status==200){
+                 $('.btn-active'+id).html("Active");
+             }
+         });
+     });
+    </script>

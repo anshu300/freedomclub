@@ -1,0 +1,28 @@
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>
+
+<div class="tz-3">
+    <h4>Notifications(18)</h4>
+    <ul class="noti">
+
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.get("/api/notification", function (d) {
+            var data = d.data;
+            for (i in data) {
+                console.log(data[i]);
+                $('<li><a href="#!"> <img src="/images/icon/dbr1.jpg" alt="" />' +
+                    '<h5>'+data[i].title+'</h5>' +
+                    '<p>'+data[i].msg+'</p>' +
+                    '</a>' +
+                    '</li>').appendTo('.noti');
+            }
+        });
+    });
+</script>

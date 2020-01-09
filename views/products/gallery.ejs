@@ -1,0 +1,106 @@
+<% include ../partials/homepage-header %>
+<% include ../partials/common %>
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <form method="POST" action="/products/gallery" enctype="multipart/form-data">
+                    <div class="tz-2-com tz-2-main">
+                        <h4>Your Recharge Details</h4>
+                        <div class="tz-2-main-com add-pr11" style="overflow:auto;">
+                            <div class="form-group">
+                                <select class="form-control" name="product_id" id="Select-Product">
+                                    <option value="" disabled selected>Select Product*</option>
+                                    <% result.forEach(function(res) { %>
+                                        <option value="<%= res.id %>">
+                                            <%= res.product_name %>
+                                        </option>
+                                        <% }); %>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="product_id" id="Select-services">
+                                    <option value="" disabled selected>Select Service*</option>
+
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <span class="btn btn-info file-btn"> Browse File</span>
+                                <input type="file" name="image" id="exampleInputFile" class="btn btn-info file-select1011">
+                            </div>
+
+
+
+                            <div class="row" id="services">
+                                <!-- <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <a href="javascript:void(0);" class="img-cross10111">x</a>
+                                        <a href="#">
+                                            <img src="/product_img/Aerial.jpg" alt="Fjords" style="width:100%">
+                                        </a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                </form>
+                </div>
+            </div>
+            <% include ../partials/notification %>
+    </div>
+    </div>
+    <% include ../partials/home-footer %>
+
+        <script type="text/javascript">
+            var product_id;
+            var service_id;
+            $('#Select-Product').on("change", function () {
+                product_id = $(this).val();
+                $.post("/products/getservicesid", { "id": product_id }, function (d) {
+                    var data = d.results;
+                    for (i in data) {
+                        console.log(data[i].name);
+                        $('<option value="' + data[i].id + '">' + data[i].name + '</option>').appendTo('#Select-services');
+                    }
+                });
+            });
+
+            $('#Select-services').on("change", function () {
+                service_id = $(this).val();
+            });
+        </script>
+        <script type="text/javascript">
+            $('#exampleInputFile').on("change", function () {
+                var file = document.getElementById("exampleInputFile").files[0];
+                var formData = new FormData();
+                formData.append('images', file);
+                formData.append('product_id', product_id);
+                formData.append('service_id', service_id);
+                $.ajax({
+                    method: 'POST',
+                    url: '/products/gallery',
+                    data: formData,
+                    dataType: 'json',
+                    async: false,
+                    type: 'post',
+                    processData: false,
+                    contentType: false,
+                    success: function (d) {
+                        console.log(d);
+                       // $('<img class="remove" data-id="' + d.id + '" src="/product_img/' + d.img + '" width="200" heigth="200">').appendTo('#services');
+                       $('<div class="col-md-3">'+'<div class="thumbnail">'+'<a href="javascript:void(0);"  class="img-cross10111" data-id="'+d.id+'">x</a>'+
+                         '<a href="#">'+ '<img src="/product_img/gallery/'+d.img+'"  alt="Fjords" style="width:100%">' + '</a>' +'</div>' +'</div>').appendTo('#services')
+                    }
+                });
+            });
+
+            $(document).on("click", ".img-cross10111", function () {
+                var id = $(this).data().id;
+                $(this).closest('.col-md-3').hide('100');
+                $.post("/products/removeimg", { "id": id }, function (d) {
+                    console.log(d);
+                });
+            });
+        </script>

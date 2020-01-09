@@ -1,0 +1,203 @@
+<style>
+    .list-mig-lc-con h2{
+        margin:0px;
+        color:#fff;
+        font-size: 22px;
+    }
+</style>
+
+<% include ../partials/homepage-header %>
+      
+
+
+	<!--TOP SEARCH SECTION-->
+	
+	<section class="dir-pa-sp-top">
+		<div class="container com-padd dir-hom-pre-tit">
+			<div class="com-title">
+				<h2>New Businesses in<span> this month</span></h2>
+				<p>Explore some of the best tips from around the world from our partners and friends.</p>
+			</div>
+			<div class="row span-none">
+
+			<% brands.forEach(function(res) { %>
+				<div class="col-md-4">
+					<a href="/products/grid_list/<%=res.id %>">
+						<div class="list-mig-like-com com-mar-bot-30">
+							<div class="list-mig-lc-img"> <img src="<%= res.image %>" alt="" width="300" height="300">  <span class="home-list-pop-rat list-mi-pr">$720</span> </div>
+							<div class="list-mig-lc-con">
+								<h2><%= res.brand_name %></h2>
+							</div>
+						</div>
+					</a>
+				</div>
+			<% }); %>
+				
+
+
+				
+			
+				<!-- <div class="row">
+					<ul class="pagination list-pagenat">
+						<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a> </li>
+						<li class="active"><a href="#!">1</a> </li>
+						<li class="waves-effect"><a href="#!">2</a> </li>
+						<li class="waves-effect"><a href="#!">3</a> </li>
+						<li class="waves-effect"><a href="#!">4</a> </li>
+						<li class="waves-effect"><a href="#!">5</a> </li>
+						<li class="waves-effect"><a href="#!">6</a> </li>
+						<li class="waves-effect"><a href="#!">7</a> </li>
+						<li class="waves-effect"><a href="#!">8</a> </li>
+						<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a> </li>
+					</ul>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+	<!--NEWS LETTER--->
+	
+	<section class="Subscribe-section">  
+          
+          <div class="container-fluid">
+            <div class="container">
+              <div class="Subscribe">
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <div class="subsimg1">
+                      <img src="/images/subs1.png">
+                    </div>
+                  </div>
+
+                  <div class="col-md-8 col-sm-8">
+                    <div class="subs-form text-center">
+                        <h2>Newsletter</h2>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                           <form class="form-horizontal">
+
+<!-- Form Name -->
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="control-label active" for="email"></label>  
+  <input id="email" name="email" type="email" placeholder="Enter Your Email" class="form-control input-md" required=""><br>
+    <button id="subs" name="subs" class="btn btn-default">GET NOTIFIED</button>
+</div>
+</form>
+<!-- Button -->
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-2">
+                    <div class="subsimg2">
+                      <img src="/images/subs2.png">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+	
+	<!--- END NEWS LETTER ---> 
+	
+	<!--MOBILE APP-->
+	
+	<% include ../partials/home-footer %>
+	<!--FOOTER SECTION-->
+		
+                  
+
+
+<script>
+  $(function () {
+  var showClass = 'show';
+
+  $('input').on('checkval', function () {
+    var label = $(this).prev('label');
+    if(this.value !== '') {
+      label.addClass(showClass);
+    } else {
+      label.removeClass(showClass);
+    }
+  }).on('keyup', function () {
+    $(this).trigger('checkval');
+  });
+});
+
+
+</script>
+
+<script>
+  // When the DOM is ready, run this function
+$(document).ready(function() {
+  //Set the carousel options
+  $('#quote-carousel, #quote-carousel1').carousel({
+    pause: true,
+    interval: 4000,
+  });
+});
+</script>
+
+
+
+<script>
+  $(document).ready(function(){
+
+$('#itemslider').carousel({ interval: 3000 });
+
+$('.carousel-showmanymoveone .item').each(function(){
+var itemToClone = $(this);
+
+for (var i=1;i<6;i++) {
+itemToClone = itemToClone.next();
+
+if (!itemToClone.length) {
+itemToClone = $(this).siblings(':first');
+}
+
+itemToClone.children(':first-child').clone()
+.removeClass("cloneditem-"+(i))
+.appendTo($(this));
+}
+});
+});
+
+</script>
+
+
+<script>
+    $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+</script>
+<script>
+$(document).ready(function(){
+    $("#share").click(function(){
+        $(".social-btns").toggle();
+    });
+});
+</script>
+
+
+	<script>
+	   $(document).ready(function(){
+    $("#mng-db").click(function(){
+        $(".tz-l-2").slideToggle();
+    });
+});
+	</script>
+
+
+ </body>
+</html>

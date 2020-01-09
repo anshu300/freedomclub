@@ -1,0 +1,57 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Manage My Profile <span style="float:right; margin-top:-22px;"><% include ../partials/common %></span></h4>
+                    <div class="db-list-com tz-db-table">
+                        <div class="ds-boar-title">
+                            <h2>Profile</h2>
+                            <p>All the Lorem Ipsum generators on the All the Lorem Ipsum generators on the</p>
+                        </div>
+                        <form method="POST" action="/users/edit/<%= id %>">
+        
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">username</label>
+                                <input type="text" name="username" class="form-control" id="exampleInputEmail1" value="<%= username %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">mobile</label>
+                                <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" value="<%= mobile %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">email</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="<%= email %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail">pincode</label>
+                                <input type="text" name="pincode" class="form-control" id="exampleInputPassword1" value="<%= pincode %>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail">country</label>
+                                <input type="text" name="country" class="form-control" id="exampleInputPassword1" value="<%= country %>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail">state</label>
+                                <input type="text" name="state" class="form-control" id="exampleInputPassword1" value="<%= state %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail">city</label>
+                                <input type="text" name="city" class="form-control" id="exampleInputPassword1" value="<%= city %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail">address</label>
+                                <input type="text" name="address" class="form-control" id="exampleInputPassword1" value="<%= address %>">
+                            </div>
+                            <button type="submit" class="btn" style="background: #663300;color:#fff">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>

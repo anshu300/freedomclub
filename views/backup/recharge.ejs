@@ -1,0 +1,40 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+       
+            <div class="tz-2" style="padding:10px;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Recharge Type</th>
+                            <th scope="col">Sim Type</th>
+                            <th scope="col">Mobile number</th>
+                            <th scope="col">Oprator</th>
+                            <th scope="col">amount</th>
+                            <th scope="col">date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <h1 class="text-center">
+                            Rs <%= TotalAmount %>
+                        </h1>
+                            <% var count=1; result.forEach(function(res) { %>
+                        <tr>
+                            <th scope="row"><%=count %></th>
+                            <td><%= res.recharge_type %></td>
+                            <td><%= res.sim_type %></td>
+                            <td><%= res.mobile_no %></td>
+                            <td><%= res.oprator %></td>
+                            <td><%= res.amount %></td>
+                            <td><%= res.date %></td>
+                        </tr>
+                        <% count++ }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>

@@ -1,0 +1,66 @@
+<% include ../partials/homepage-header %>
+
+<div class="tz">
+<% include ../partials/user-left %>
+<style>
+    .edtpr{
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 10px 6px 10px grey;
+    }
+    .edtpr:hover{
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px grey;
+    }
+</style>
+<form method="POST" action="/users/upload" enctype="multipart/form-data">
+<div class="tz-2">
+    <div class="tz-2-com tz-2-main">
+        <h4>Manage My Profile <span style="float:right; margin-top:-22px;"><% include ../partials/common %></span></h4> 
+        <div style="padding:20px; 30px;">
+        <div class="form-group">
+                          
+                        
+        <select name="merchant_id" class="form-control">
+                <% results.forEach(function(res) { %>
+                    <option value="<%= res.id %>"><%= res.vendor_name %> - <%= res.id %></option>
+                <% }); %>
+        </select>   
+        </div>
+        <div class="form-group">
+        <!--<input type="file" name="images" class="form-control">-->
+        <div class="file-field input-field">
+                <div class="tz-up-btn">
+                    <span>Edit</span>
+                    <input type="file" name="images"> </div>
+                <div class="file-path-wrapper db-v2-pg-inp">
+                    <input class="file-path validate" type="text" style="background-color:#fff; border:2px solid #630; padding-left:10px;">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+        <input type="number" name="amount" placeholder="amout" class="form-control">
+        </div>
+        
+        <div class="form-group">
+        <input type="hidden" name="pincode" value="<%= pincode %>" class="form-control">  
+        </div>
+        <input type="submit" value="submit" class="btn btn-info btn-block pr-sub">
+    </div>
+    </div>
+</div>
+
+</form>
+<% include ../partials/notification %>
+</div>
+<% include ../partials/home-footer %>
+
+
+
+
+

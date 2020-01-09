@@ -1,0 +1,55 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+            <div class="tz-2">
+
+                <div class="tz-2-com tz-2-main">
+                    <h4>commission <span style="float:right; margin-top:-22px;"><% include ../partials/common %></span></h4>
+                </div>
+
+                <input type="hidden" id="pincode" value="<%= pincode %>">
+                <select class="form-control" name="month" id="month">
+                    <option value="">Select Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="010">October</option>
+                    <option value="011">November</option>
+                    <option value="012">December</option>
+                </select>
+
+                <button>
+                    Submit
+                </button>
+
+                <h1 class="commision">
+                   
+                </h1>
+                
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+<% include ../partials/home-footer %>
+
+<script>
+    var month;
+    $('#month').on("change",function(){
+      month=$(this).val();
+    });
+    $('button').on("click",function(){
+       var pin=$('#pincode').val();
+       $.post("/users/commision",{"pincode":pin,"month":month},function(d){
+           console.log(d);
+        $('.commision').html(d.data);
+           //$('.commision').html(d);
+       });
+    });
+</script>

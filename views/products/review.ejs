@@ -1,0 +1,70 @@
+
+
+
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4>Add Your Product</h4>
+                    <div class="tz-2-main-com add-pr11" style="overflow:auto;">
+                        <div class="tz-2">
+                           
+                                
+                                <div class="db-list-com tz-db-table">
+                                    <div class="tz-mess">
+                                        <ul>
+
+
+                                        <% results.forEach(function(res) { %>
+
+                                            <li class="view-msg">
+                                                <h5><img src="/images/5.png" alt="" />Jessica <span class="tz-revi-star"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></h5>
+                                                <p><%= res.review  %></p>
+                                                   <div class="hid-msg">
+                                                       <a class="chk" href="javascript:void(0);" data-id="<%= res.id  %>"><i class="fa fa-check" title="approve this review"></i></a>
+                                                       <a href="#!"><i class="fa fa-edit" title="edit"></i></a>
+                                                       <a href="#!"><i class="fa fa-trash" title="delete"></i></a>
+                                                       <a href="#!"><i class="fa fa-reply edit-replay" title="replay"></i>
+                                                    </a>
+                                                    <form class="col s12 hide-box">
+                                                        <div class="">
+                                                            <div class="input-field col s12">
+                                                                <textarea class="materialize-textarea"></textarea>
+                                                                <label>Write your replay</label>
+                                                            </div>
+                                                            <div class="input-field col s12">
+                                                            <input type="submit" value="Submit" class="waves-effect waves-light btn-large"> </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </li>
+
+                                            <% }); %>
+                                            
+
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="db-mak-pay-bot">
+                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p> <a href="db-setting.html" class="waves-effect waves-light btn-large">my settings</a> </div>
+                                </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>
+
+ <script>
+     $('.chk').on("click",function(){
+         var id=$(this).data().id;
+         alert(id);
+     });
+ </script>

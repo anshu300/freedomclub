@@ -1,0 +1,35 @@
+<% include ../partials/homepage-header %>
+
+    <div class="tz">
+        <% include ../partials/user-left %>
+
+
+            <div class="tz-2">
+                <div class="tz-2-com tz-2-main">
+                    <h4> My Gpv List</h4>
+                     <table>
+                         <thead>
+                           <th>name</th>
+                           <th>email</th> 
+                           <th>gpv id</th> 
+                         </thead>
+                         <tbody>
+
+                         <% results.forEach(function(res) { %>
+                        <tr>
+                     
+                            <td><%= res.user__first_name %></td>
+                            <td><%= res.user__email %></td>
+                            <td><%= res.gpv_id %></td>
+                           
+                            
+                        </tr>
+                        <% }); %>
+                         </tbody>
+                     </table>
+                </div>
+            </div>
+
+            <% include ../partials/notification %>
+    </div>
+    <% include ../partials/home-footer %>
